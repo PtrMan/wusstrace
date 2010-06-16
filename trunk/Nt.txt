@@ -1,0 +1,4976 @@
+// NTSYSAPI
+// NTSTATUS
+// ntapi
+// NtCancelTimer(
+//	IN HANDLE2 TimerHandle,
+//	OUT PBOOLEAN PreviousState OPTIONAL
+//	);
+
+
+  Windows System Call Table (NT/2000/XP/2003/Vista)
+
+The Metasploit Project <http://www.metasploit.com>
+
+
+ Highlight a given system call number by its index (in hex) 
+
+
+
+
+
+
+System Call Symbol 	Windows NT 	Windows 2000 	Windows XP 	Windows 2003
+Server 	Vista
+SP3 	SP4 	SP5 	SP6 	SP0 	SP1 	SP2 	SP3 	SP4 	SP0 	SP1 	SP2 	SP0 	SP1 	SP0
+ NtAcceptConnectPort <javascript:showPrototypeDiv('NtAcceptConnectPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAcceptConnectPort(
+	OUT PHANDLE2 PortHandle,
+	IN ULONG PortIdentifier,
+	IN PPORT_MESSAGE Message,
+	IN BOOLEAN Accept,
+	INOUT PPORT_VIEW ServerView OPTIONAL,
+	OUT PREMOTE_PORT_VIEW ClientView OPTIONAL
+	);
+
+	 0x0000  	 0x0000  	 0x0000  	 0x0000  	 0x0000  	 0x0000  	 0x0000 
+ 0x0000  	 0x0000  	 0x0000  	 0x0000  	 0x0000  	 0x0000  	 0x0000 
+ 0x0000 
+ NtAccessCheck <javascript:showPrototypeDiv('NtAccessCheck')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAccessCheck(
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN HANDLE2 TokenHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN PGENERIC_MAPPING GenericMapping,
+	OUT PPRIVILEGE_SET PrivilegeSet,
+	IN PULONG PrivilegeSetLength,
+	OUT PACCESS_MASK GrantedAccess,
+	OUT PBOOLEAN AccessStatus
+	);
+
+	 0x0001  	 0x0001  	 0x0001  	 0x0001  	 0x0001  	 0x0001  	 0x0001 
+ 0x0001  	 0x0001  	 0x0001  	 0x0001  	 0x0001  	 0x0001  	 0x0001 
+ 0x0001 
+ NtAccessCheckAndAuditAlarm
+<javascript:showPrototypeDiv('NtAccessCheckAndAuditAlarm')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAccessCheckAndAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN PUNICODE_STRING ObjectTypeName,
+	IN PUNICODE_STRING ObjectName,
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN ACCESS_MASK DesiredAccess,
+	IN PGENERIC_MAPPING GenericMapping,
+	IN BOOLEAN ObjectCreation,
+	OUT PACCESS_MASK GrantedAccess,
+	OUT PBOOLEAN AccessStatus,
+	OUT PBOOLEAN GenerateOnClose
+	);
+
+	 0x0002  	 0x0002  	 0x0002  	 0x0002  	 0x0002  	 0x0002  	 0x0002 
+ 0x0002  	 0x0002  	 0x0002  	 0x0002  	 0x0002  	 0x0002  	 0x0002 
+ 0x0002 
+ NtAccessCheckByType <javascript:showPrototypeDiv('NtAccessCheckByType')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAccessCheckByType(
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN PSID PrincipalSelfSid,
+	IN HANDLE2 TokenHandle,
+	IN ULONG DesiredAccess,
+	IN POBJECT_TYPE_LIST ObjectTypeList,
+	IN ULONG ObjectTypeListLength,
+	IN PGENERIC_MAPPING GenericMapping,
+	IN PPRIVILEGE_SET PrivilegeSet,
+	IN PULONG PrivilegeSetLength,
+	OUT PACCESS_MASK GrantedAccess,
+	OUT PULONG AccessStatus
+	);
+
+	    	    	    	    	 0x0003  	 0x0003  	 0x0003  	 0x0003  	 0x0003 
+ 0x0003  	 0x0003  	 0x0003  	 0x0003  	 0x0003  	 0x0003 
+ NtAccessCheckByTypeAndAuditAlarm
+<javascript:showPrototypeDiv('NtAccessCheckByTypeAndAuditAlarm')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAccessCheckByTypeAndAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN PUNICODE_STRING ObjectTypeName,
+	IN PUNICODE_STRING ObjectName,
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN PSID PrincipalSelfSid,
+	IN ACCESS_MASK DesiredAccess,
+	IN AUDIT_EVENT_TYPE AuditType,
+	IN ULONG Flags,
+	IN POBJECT_TYPE_LIST ObjectTypeList,
+	IN ULONG ObjectTypeListLength,
+	IN PGENERIC_MAPPING GenericMapping,
+	IN BOOLEAN ObjectCreation,
+	OUT PACCESS_MASK GrantedAccess,
+	OUT PULONG AccessStatus,
+	OUT PBOOLEAN GenerateOnClose
+	);
+
+	    	    	    	    	 0x0004  	 0x0004  	 0x0004  	 0x0004  	 0x0004 
+ 0x0004  	 0x0004  	 0x0004  	 0x0004  	 0x0004  	 0x0004 
+ NtAccessCheckByTypeResultList
+<javascript:showPrototypeDiv('NtAccessCheckByTypeResultList')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAccessCheckByTypeResultList(
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN PSID PrincipalSelfSid,
+	IN HANDLE2 TokenHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_TYPE_LIST ObjectTypeList,
+	IN ULONG ObjectTypeListLength,
+	IN PGENERIC_MAPPING GenericMapping,
+	IN PPRIVILEGE_SET PrivilegeSet,
+	IN PULONG PrivilegeSetLength,
+	OUT PACCESS_MASK GrantedAccessList,
+	OUT PULONG AccessStatusList
+	);
+
+	    	    	    	    	 0x0005  	 0x0005  	 0x0005  	 0x0005  	 0x0005 
+ 0x0005  	 0x0005  	 0x0005  	 0x0005  	 0x0005  	 0x0005 
+ NtAccessCheckByTypeResultListAndAuditAlarm
+<javascript:showPrototypeDiv('NtAccessCheckByTypeResultListAndAuditAlarm')> 
+
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAccessCheckByTypeResultListAndAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN PUNICODE_STRING ObjectTypeName,
+	IN PUNICODE_STRING ObjectName,
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN PSID PrincipalSelfSid,
+	IN ACCESS_MASK DesiredAccess,
+	IN AUDIT_EVENT_TYPE AuditType,
+	IN ULONG Flags,
+	IN POBJECT_TYPE_LIST ObjectTypeList,
+	IN ULONG ObjectTypeListLength,
+	IN PGENERIC_MAPPING GenericMapping,
+	IN BOOLEAN ObjectCreation,
+	OUT PACCESS_MASK GrantedAccessList,
+	OUT PULONG AccessStatusList,
+	OUT PULONG GenerateOnClose
+	);
+
+	    	    	    	    	 0x0006  	 0x0006  	 0x0006  	 0x0006  	 0x0006 
+ 0x0006  	 0x0006  	 0x0006  	 0x0006  	 0x0006  	 0x0006 
+ NtAccessCheckByTypeResultListAndAuditAlarmByHandle
+<javascript:showPrototypeDiv('NtAccessCheckByTypeResultListAndAuditAlarmByHandle')> 
+
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAccessCheckByTypeResultListAndAuditAlarmByHandle(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN HANDLE2 TokenHandle,
+	IN PUNICODE_STRING ObjectTypeName,
+	IN PUNICODE_STRING ObjectName,
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN PSID PrincipalSelfSid,
+	IN ACCESS_MASK DesiredAccess,
+	IN AUDIT_EVENT_TYPE AuditType,
+	IN ULONG Flags,
+	IN POBJECT_TYPE_LIST ObjectTypeList,
+	IN ULONG ObjectTypeListLength,
+	IN PGENERIC_MAPPING GenericMapping,
+	IN BOOLEAN ObjectCreation,
+	OUT PACCESS_MASK GrantedAccessList,
+	OUT PULONG AccessStatusList,
+	OUT PULONG GenerateOnClose
+	);
+
+	    	    	    	    	 0x0007  	 0x0007  	 0x0007  	 0x0007  	 0x0007 
+ 0x0007  	 0x0007  	 0x0007  	 0x0007  	 0x0007  	 0x0007 
+ NtAddAtom <javascript:showPrototypeDiv('NtAddAtom')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAddAtom(
+	IN PWSTR String,
+	IN ULONG StringLength,
+	OUT PUSHORT Atom
+	);
+
+	 0x0003  	 0x0003  	 0x0003  	 0x0003  	 0x0008  	 0x0008  	 0x0008 
+ 0x0008  	 0x0008  	 0x0008  	 0x0008  	 0x0008  	 0x0008  	 0x0008 
+ 0x0008 
+ NtAddBootEntry <javascript:showPrototypeDiv('NtAddBootEntry')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAddBootEntry(
+	IN PUNICODE_STRING EntryName,
+	IN PUNICODE_STRING EntryValue
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0009  	 0x0009 
+ 0x0009  	 0x0009  	 0x0009  	 0x0009 
+ NtAddDriverEntry <javascript:showPrototypeDiv('NtAddDriverEntry')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAddDriverEntry(
+	IN PUNICODE_STRING DriverName,
+	IN PUNICODE_STRING DriverPath
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x000a 
+ 0x000a  	 0x000a 
+ NtAdjustGroupsToken <javascript:showPrototypeDiv('NtAdjustGroupsToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAdjustGroupsToken(
+	IN HANDLE2 TokenHandle,
+	IN BOOLEAN ResetToDefault,
+	IN PTOKEN_GROUPS NewState,
+	IN ULONG BufferLength,
+	OUT PTOKEN_GROUPS PreviousState OPTIONAL,
+	OUT PULONG ReturnLength
+	);
+
+	 0x0004  	 0x0004  	 0x0004  	 0x0004  	 0x0009  	 0x0009  	 0x0009 
+ 0x0009  	 0x0009  	 0x000a  	 0x000a  	 0x000a  	 0x000b  	 0x000b 
+ 0x000b 
+ NtAdjustPrivilegesToken
+<javascript:showPrototypeDiv('NtAdjustPrivilegesToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAdjustPrivilegesToken(
+	IN HANDLE2 TokenHandle,
+	IN BOOLEAN DisableAllPrivileges,
+	IN PTOKEN_PRIVILEGES NewState,
+	IN ULONG BufferLength,
+	OUT PTOKEN_PRIVILEGES PreviousState OPTIONAL,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x0005  	 0x0005  	 0x0005  	 0x0005  	 0x000a  	 0x000a  	 0x000a 
+ 0x000a  	 0x000a  	 0x000b  	 0x000b  	 0x000b  	 0x000c  	 0x000c 
+ 0x000c 
+ NtAlertResumeThread <javascript:showPrototypeDiv('NtAlertResumeThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAlertResumeThread(
+	IN HANDLE2 ThreadHandle,
+	OUT PULONG PreviousSuspendCount OPTIONAL
+	);
+
+	 0x0006  	 0x0006  	 0x0006  	 0x0006  	 0x000b  	 0x000b  	 0x000b 
+ 0x000b  	 0x000b  	 0x000c  	 0x000c  	 0x000c  	 0x000d  	 0x000d 
+ 0x000d 
+ NtAlertThread <javascript:showPrototypeDiv('NtAlertThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAlertThread(
+	IN HANDLE2 ThreadHandle
+	);
+
+	 0x0007  	 0x0007  	 0x0007  	 0x0007  	 0x000c  	 0x000c  	 0x000c 
+ 0x000c  	 0x000c  	 0x000d  	 0x000d  	 0x000d  	 0x000e  	 0x000e 
+ 0x000e 
+ NtAllocateLocallyUniqueId
+<javascript:showPrototypeDiv('NtAllocateLocallyUniqueId')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAllocateLocallyUniqueId(
+	OUT PLUID Luid
+	);
+
+	 0x0008  	 0x0008  	 0x0008  	 0x0008  	 0x000d  	 0x000d  	 0x000d 
+ 0x000d  	 0x000d  	 0x000e  	 0x000e  	 0x000e  	 0x000f  	 0x000f 
+ 0x000f 
+ NtAllocateUserPhysicalPages
+<javascript:showPrototypeDiv('NtAllocateUserPhysicalPages')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAllocateUserPhysicalPages(
+	IN HANDLE2 ProcessHandle,
+	IN PULONG NumberOfPages,
+	OUT PULONG PageFrameNumbers
+	);
+
+	    	    	    	    	 0x000e  	 0x000e  	 0x000e  	 0x000e  	 0x000e 
+ 0x000f  	 0x000f  	 0x000f  	 0x0010  	 0x0010  	 0x0010 
+ NtAllocateUuids <javascript:showPrototypeDiv('NtAllocateUuids')> 
+
+// NTSYSAPI
+// NTSTATUS
+// ntapi
+// NtAllocateUuids(
+//	OUT PLARGE_INTEGER2 UuidLastTimeAllocated,
+//	OUT PULONG UuidDeltaTime,
+//	OUT PULONG UuidSequenceNumber,
+//	OUT PUCHAR UuidSeed
+// 	);
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAllocateUuids(
+	OUT PLARGE_INTEGER2 UuidLastTimeAllocated,
+	OUT PULONG UuidDeltaTime,
+	OUT PULONG UuidSequenceNumber
+	);
+
+	 0x0009  	 0x0009  	 0x0009  	 0x0009  	 0x000f  	 0x000f  	 0x000f 
+ 0x000f  	 0x000f  	 0x0010  	 0x0010  	 0x0010  	 0x0011  	 0x0011 
+ 0x0011 
+ NtAllocateVirtualMemory
+<javascript:showPrototypeDiv('NtAllocateVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAllocateVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	INOUT ULONG BaseAddress,
+	IN ULONG ZeroBits,
+	INOUT PULONG AllocationSize,
+	IN ULONG AllocationType,
+	IN ULONG Protect
+	);
+
+	 0x000a  	 0x000a  	 0x000a  	 0x000a  	 0x0010  	 0x0010  	 0x0010 
+ 0x0010  	 0x0010  	 0x0011  	 0x0011  	 0x0011  	 0x0012  	 0x0012 
+ 0x0012 
+ NtAlpcAcceptConnectPort
+<javascript:showPrototypeDiv('NtAlpcAcceptConnectPort')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0013 
+ NtAlpcCancelMessage
+<javascript:showPrototypeDiv('NtAlpcCancelMessage')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0014 
+ NtAlpcConnectPort
+<javascript:showPrototypeDiv('NtAlpcConnectPort')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0015 
+ NtAlpcCreatePort <javascript:showPrototypeDiv('NtAlpcCreatePort')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0016 
+ NtAlpcCreatePortSection
+<javascript:showPrototypeDiv('NtAlpcCreatePortSection')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0017 
+ NtAlpcCreateResourceReserve
+<javascript:showPrototypeDiv('NtAlpcCreateResourceReserve')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0018 
+ NtAlpcCreateSectionView
+<javascript:showPrototypeDiv('NtAlpcCreateSectionView')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0019 
+ NtAlpcCreateSecurityContext
+<javascript:showPrototypeDiv('NtAlpcCreateSecurityContext')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x001a 
+ NtAlpcDeletePortSection
+<javascript:showPrototypeDiv('NtAlpcDeletePortSection')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x001b 
+ NtAlpcDeleteResourceReserve
+<javascript:showPrototypeDiv('NtAlpcDeleteResourceReserve')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x001c 
+ NtAlpcDeleteSectionView
+<javascript:showPrototypeDiv('NtAlpcDeleteSectionView')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x001d 
+ NtAlpcDeleteSecurityContext
+<javascript:showPrototypeDiv('NtAlpcDeleteSecurityContext')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x001e 
+ NtAlpcDisconnectPort
+<javascript:showPrototypeDiv('NtAlpcDisconnectPort')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x001f 
+ NtAlpcImpersonateClientOfPort
+<javascript:showPrototypeDiv('NtAlpcImpersonateClientOfPort')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0020 
+ NtAlpcOpenSenderProcess
+<javascript:showPrototypeDiv('NtAlpcOpenSenderProcess')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0021 
+ NtAlpcOpenSenderThread
+<javascript:showPrototypeDiv('NtAlpcOpenSenderThread')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0022 
+ NtAlpcQueryInformation
+<javascript:showPrototypeDiv('NtAlpcQueryInformation')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0023 
+ NtAlpcQueryInformationMessage
+<javascript:showPrototypeDiv('NtAlpcQueryInformationMessage')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0024 
+ NtAlpcSendWaitReceivePort
+<javascript:showPrototypeDiv('NtAlpcSendWaitReceivePort')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0025 
+ NtAlpcSetInformation
+<javascript:showPrototypeDiv('NtAlpcSetInformation')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0026 
+ NtApphelpCacheControl
+<javascript:showPrototypeDiv('NtApphelpCacheControl')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtApphelpCacheControl(
+	IN APPHELPCACHECONTROL ApphelpCacheControl,
+	IN PUNICODE_STRING ApphelpCacheObject
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x0013 
+ 0x0013  	 0x0027 
+ NtAreMappedFilesTheSame
+<javascript:showPrototypeDiv('NtAreMappedFilesTheSame')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAreMappedFilesTheSame(
+	IN ULONG Address1,
+	IN ULONG Address2
+	);
+
+	    	    	    	    	 0x0011  	 0x0011  	 0x0011  	 0x0011  	 0x0011 
+ 0x0012  	 0x0012  	 0x0012  	 0x0014  	 0x0014  	 0x0028 
+ NtAssignProcessToJobObject
+<javascript:showPrototypeDiv('NtAssignProcessToJobObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtAssignProcessToJobObject(
+	IN HANDLE2 JobHandle,
+	IN HANDLE2 ProcessHandle
+	);
+
+	    	    	    	    	 0x0012  	 0x0012  	 0x0012  	 0x0012  	 0x0012 
+ 0x0013  	 0x0013  	 0x0013  	 0x0015  	 0x0015  	 0x0029 
+ NtCallbackReturn <javascript:showPrototypeDiv('NtCallbackReturn')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCallbackReturn(
+	IN PVOID2 Result OPTIONAL,
+	IN ULONG ResultLength,
+	IN NTSTATUS Status
+	);
+
+	 0x000b  	 0x000b  	 0x000b  	 0x000b  	 0x0013  	 0x0013  	 0x0013 
+ 0x0013  	 0x0013  	 0x0014  	 0x0014  	 0x0014  	 0x0016  	 0x0016 
+ 0x002a 
+ NtCancelDeviceWakeupRequest
+<javascript:showPrototypeDiv('NtCancelDeviceWakeupRequest')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCancelDeviceWakeupRequest(
+	IN HANDLE2 DeviceHandle
+	);
+
+	    	    	    	    	 0x0016  	 0x0016  	 0x0016  	 0x0016  	 0x0016 
+ 0x0015  	 0x0015  	 0x0015  	 0x0017  	 0x0017  	 0x002b 
+ NtCancelIoFile <javascript:showPrototypeDiv('NtCancelIoFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCancelIoFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock
+	);
+
+	 0x000c  	 0x000c  	 0x000c  	 0x000c  	 0x0014  	 0x0014  	 0x0014 
+ 0x0014  	 0x0014  	 0x0016  	 0x0016  	 0x0016  	 0x0018  	 0x0018 
+ 0x002c 
+ NtCancelIoFileEx <javascript:showPrototypeDiv('NtCancelIoFileEx')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0172 
+ NtCancelSynchronousIoFile
+<javascript:showPrototypeDiv('NtCancelSynchronousIoFile')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0173 
+ NtCancelTimer <javascript:showPrototypeDiv('NtCancelTimer')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCancelTimer(
+	IN HANDLE2 TimerHandle,
+	OUT PBOOLEAN PreviousState OPTIONAL
+	);
+
+	 0x000d  	 0x000d  	 0x000d  	 0x000d  	 0x0015  	 0x0015  	 0x0015 
+ 0x0015  	 0x0015  	 0x0017  	 0x0017  	 0x0017  	 0x0019  	 0x0019 
+ 0x002d 
+ NtClearAllSavepointsTransaction
+<javascript:showPrototypeDiv('NtClearAllSavepointsTransaction')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x011b 
+ NtClearEvent <javascript:showPrototypeDiv('NtClearEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtClearEvent(
+	IN HANDLE2 EventHandle
+	);
+
+	 0x000e  	 0x000e  	 0x000e  	 0x000e  	 0x0017  	 0x0017  	 0x0017 
+ 0x0017  	 0x0017  	 0x0018  	 0x0018  	 0x0018  	 0x001a  	 0x001a 
+ 0x002e 
+ NtClearMUILicenseInfo
+<javascript:showPrototypeDiv('NtClearMUILicenseInfo')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0187 
+ NtClearSavepointTransaction
+<javascript:showPrototypeDiv('NtClearSavepointTransaction')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x011a 
+ NtClose <javascript:showPrototypeDiv('NtClose')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtClose(
+	IN HANDLE2 Handle
+	);
+
+	 0x000f  	 0x000f  	 0x000f  	 0x000f  	 0x0018  	 0x0018  	 0x0018 
+ 0x0018  	 0x0018  	 0x0019  	 0x0019  	 0x0019  	 0x001b  	 0x001b 
+ 0x002f 
+ NtCloseObjectAuditAlarm
+<javascript:showPrototypeDiv('NtCloseObjectAuditAlarm')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCloseObjectAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN BOOLEAN GenerateOnClose
+	);
+
+	 0x0010  	 0x0010  	 0x0010  	 0x0010  	 0x0019  	 0x0019  	 0x0019 
+ 0x0019  	 0x0019  	 0x001a  	 0x001a  	 0x001a  	 0x001c  	 0x001c 
+ 0x0030 
+ NtCommitComplete <javascript:showPrototypeDiv('NtCommitComplete')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x005d 
+ NtCommitEnlistment
+<javascript:showPrototypeDiv('NtCommitEnlistment')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0055 
+ NtCommitTransaction
+<javascript:showPrototypeDiv('NtCommitTransaction')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0059 
+ NtCompactKeys <javascript:showPrototypeDiv('NtCompactKeys')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCompactKeys(
+	IN ULONG Length,
+	IN HANDLE2 Key
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x001b  	 0x001b 
+ 0x001b  	 0x001d  	 0x001d  	 0x0031 
+ NtCompareTokens <javascript:showPrototypeDiv('NtCompareTokens')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCompareTokens(
+	IN HANDLE2 FirstTokenHandle,
+	IN HANDLE2 SecondTokenHandle,
+	OUT PBOOLEAN IdenticalTokens
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x001c  	 0x001c 
+ 0x001c  	 0x001e  	 0x001e  	 0x0032 
+ NtCompleteConnectPort
+<javascript:showPrototypeDiv('NtCompleteConnectPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCompleteConnectPort(
+	IN HANDLE2 PortHandle
+	);
+
+	 0x0011  	 0x0011  	 0x0011  	 0x0011  	 0x001a  	 0x001a  	 0x001a 
+ 0x001a  	 0x001a  	 0x001d  	 0x001d  	 0x001d  	 0x001f  	 0x001f 
+ 0x0033 
+ NtCompressKey <javascript:showPrototypeDiv('NtCompressKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCompressKey(
+	IN HANDLE2 Key
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x001e  	 0x001e 
+ 0x001e  	 0x0020  	 0x0020  	 0x0034 
+ NtConnectPort <javascript:showPrototypeDiv('NtConnectPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtConnectPort(
+	OUT PHANDLE2 PortHandle,
+	IN PUNICODE_STRING PortName,
+	IN PSECURITY_QUALITY_OF_SERVICE SecurityQos,
+	INOUT PPORT_VIEW ClientView OPTIONAL,
+	OUT PREMOTE_PORT_VIEW ServerView OPTIONAL,
+	OUT PULONG MaxMessageLength OPTIONAL,
+	INOUT PVOID2 ConnectInformation OPTIONAL,
+	INOUT PULONG ConnectInformationLength OPTIONAL
+	);
+
+	 0x0012  	 0x0012  	 0x0012  	 0x0012  	 0x001b  	 0x001b  	 0x001b 
+ 0x001b  	 0x001b  	 0x001f  	 0x001f  	 0x001f  	 0x0021  	 0x0021 
+ 0x0035 
+ NtContinue <javascript:showPrototypeDiv('NtContinue')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtContinue(
+	IN PCONTEXT Context,
+	IN BOOLEAN TestAlert
+	);
+
+	 0x0013  	 0x0013  	 0x0013  	 0x0013  	 0x001c  	 0x001c  	 0x001c 
+ 0x001c  	 0x001c  	 0x0020  	 0x0020  	 0x0020  	 0x0022  	 0x0022 
+ 0x0036 
+ NtCreateChannel <javascript:showPrototypeDiv('NtCreateChannel')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateChannel(
+	OUT PHANDLE2 ChannelHandle,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes OPTIONAL
+	);
+
+	 0x00cd  	 0x00cc  	 0x00cc  	 0x00cc  	 0x00f1  	 0x00f1  	 0x00f1 
+ 0x00f1  	 0x00f1  	    	    	    	    	    	   
+ NtCreateDebugObject <javascript:showPrototypeDiv('NtCreateDebugObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateDebugObject(
+	OUT PHANDLE2 DebugObject,
+	IN ULONG AccessRequired,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN BOOLEAN KillProcessOnExit
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0021  	 0x0021 
+ 0x0021  	 0x0023  	 0x0023  	 0x0037 
+ NtCreateDirectoryObject
+<javascript:showPrototypeDiv('NtCreateDirectoryObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateDirectoryObject(
+	OUT PHANDLE2 DirectoryHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0014  	 0x0014  	 0x0014  	 0x0014  	 0x001d  	 0x001d  	 0x001d 
+ 0x001d  	 0x001d  	 0x0022  	 0x0022  	 0x0022  	 0x0024  	 0x0024 
+ 0x0038 
+ NtCreateEnlistment
+<javascript:showPrototypeDiv('NtCreateEnlistment')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x006d 
+ NtCreateEvent <javascript:showPrototypeDiv('NtCreateEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateEvent(
+	OUT PHANDLE2 EventHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN EVENT_TYPE2 EventType,
+	IN BOOLEAN InitialState
+	);
+
+	 0x0015  	 0x0015  	 0x0015  	 0x0015  	 0x001e  	 0x001e  	 0x001e 
+ 0x001e  	 0x001e  	 0x0023  	 0x0023  	 0x0023  	 0x0025  	 0x0025 
+ 0x0039 
+ NtCreateEventPair <javascript:showPrototypeDiv('NtCreateEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateEventPair(
+	OUT PHANDLE2 EventPairHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0016  	 0x0016  	 0x0016  	 0x0016  	 0x001f  	 0x001f  	 0x001f 
+ 0x001f  	 0x001f  	 0x0024  	 0x0024  	 0x0024  	 0x0026  	 0x0026 
+ 0x003a 
+ NtCreateFile <javascript:showPrototypeDiv('NtCreateFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateFile(
+	OUT PHANDLE2 FileHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PLARGE_INTEGER2 AllocationSize OPTIONAL,
+	IN ULONG FileAttributes,
+	IN ULONG ShareAccess,
+	IN ULONG CreateDisposition,
+	IN ULONG CreateOptions,
+	IN PVOID2 EaBuffer OPTIONAL,
+	IN ULONG EaLength
+	);
+
+	 0x0017  	 0x0017  	 0x0017  	 0x0017  	 0x0020  	 0x0020  	 0x0020 
+ 0x0020  	 0x0020  	 0x0025  	 0x0025  	 0x0025  	 0x0027  	 0x0027 
+ 0x003b 
+ NtCreateIoCompletion
+<javascript:showPrototypeDiv('NtCreateIoCompletion')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateIoCompletion(
+	OUT PHANDLE2 IoCompletionHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN ULONG NumberOfConcurrentThreads
+	);
+
+	 0x0018  	 0x0018  	 0x0018  	 0x0018  	 0x0021  	 0x0021  	 0x0021 
+ 0x0021  	 0x0021  	 0x0026  	 0x0026  	 0x0026  	 0x0028  	 0x0028 
+ 0x003c 
+ NtCreateJobObject <javascript:showPrototypeDiv('NtCreateJobObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateJobObject(
+	OUT PHANDLE2 JobHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	    	    	    	    	 0x0022  	 0x0022  	 0x0022  	 0x0022  	 0x0022 
+ 0x0027  	 0x0027  	 0x0027  	 0x0029  	 0x0029  	 0x003d 
+ NtCreateJobSet <javascript:showPrototypeDiv('NtCreateJobSet')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateJobSet(
+	IN ULONG Jobs,
+	IN PJOB_SET_ARRAY JobSet,
+	IN ULONG Reserved
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0028  	 0x0028 
+ 0x0028  	 0x002a  	 0x002a  	 0x003e 
+ NtCreateKey <javascript:showPrototypeDiv('NtCreateKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateKey(
+	OUT PHANDLE2 KeyHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN ULONG TitleIndex,
+	IN PUNICODE_STRING Class OPTIONAL,
+	IN ULONG CreateOptions,
+	OUT PULONG Disposition OPTIONAL
+	);
+
+	 0x0019  	 0x0019  	 0x0019  	 0x0019  	 0x0023  	 0x0023  	 0x0023 
+ 0x0023  	 0x0023  	 0x0029  	 0x0029  	 0x0029  	 0x002b  	 0x002b 
+ 0x003f 
+ NtCreateKeyedEvent <javascript:showPrototypeDiv('NtCreateKeyedEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateKeyedEvent(
+	OUT PHANDLE2 KeyedEventHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN ULONG Reserved
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0117  	 0x0117 
+ 0x0117  	 0x0121  	 0x0121  	 0x0169 
+ NtCreateMailslotFile
+<javascript:showPrototypeDiv('NtCreateMailslotFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateMailslotFile(
+	OUT PHANDLE2 FileHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN ULONG CreateOptions,
+	IN ULONG InBufferSize,
+	IN ULONG MaxMessageSize,
+	IN PLARGE_INTEGER2 ReadTimeout OPTIONAL
+	);
+
+	 0x001a  	 0x001a  	 0x001a  	 0x001a  	 0x0024  	 0x0024  	 0x0024 
+ 0x0024  	 0x0024  	 0x002a  	 0x002a  	 0x002a  	 0x002c  	 0x002c 
+ 0x0040 
+ NtCreateMutant <javascript:showPrototypeDiv('NtCreateMutant')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateMutant(
+	OUT PHANDLE2 MutantHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN BOOLEAN InitialOwner
+	);
+
+	 0x001b  	 0x001b  	 0x001b  	 0x001b  	 0x0025  	 0x0025  	 0x0025 
+ 0x0025  	 0x0025  	 0x002b  	 0x002b  	 0x002b  	 0x002d  	 0x002d 
+ 0x0041 
+ NtCreateNamedPipeFile
+<javascript:showPrototypeDiv('NtCreateNamedPipeFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateNamedPipeFile(
+	OUT PHANDLE2 FileHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN ULONG ShareAccess,
+	IN ULONG CreateDisposition,
+	IN ULONG CreateOptions,
+	IN BOOLEAN TypeMessage,
+	IN BOOLEAN ReadmodeMessage,
+	IN BOOLEAN Nonblocking,
+	IN ULONG MaxInstances,
+	IN ULONG InBufferSize,
+	IN ULONG OutBufferSize,
+	IN PLARGE_INTEGER2 DefaultTimeout OPTIONAL
+	);
+
+	 0x001c  	 0x001c  	 0x001c  	 0x001c  	 0x0026  	 0x0026  	 0x0026 
+ 0x0026  	 0x0026  	 0x002c  	 0x002c  	 0x002c  	 0x002e  	 0x002e 
+ 0x0042 
+ NtCreatePagingFile <javascript:showPrototypeDiv('NtCreatePagingFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreatePagingFile(
+	IN PUNICODE_STRING FileName,
+	IN PULARGE_INTEGER2 InitialSize,
+	IN PULARGE_INTEGER2 MaximumSize,
+	IN ULONG Priority OPTIONAL
+	);
+
+	 0x001d  	 0x001d  	 0x001d  	 0x001d  	 0x0027  	 0x0027  	 0x0027 
+ 0x0027  	 0x0027  	 0x002d  	 0x002d  	 0x002d  	 0x002f  	 0x002f 
+ 0x0044 
+ NtCreatePort <javascript:showPrototypeDiv('NtCreatePort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreatePort(
+	OUT PHANDLE2 PortHandle,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN ULONG MaxConnectionInfoLength,
+	IN ULONG MaxMessageLength,
+	IN ULONG MaxPoolUsage
+	);
+
+	 0x001e  	 0x001c  	 0x001e  	 0x001e  	 0x0028  	 0x0028  	 0x0028 
+ 0x0028  	 0x0028  	 0x002e  	 0x002e  	 0x002e  	 0x0030  	 0x0030 
+ 0x0045 
+ NtCreatePrivateNamespace
+<javascript:showPrototypeDiv('NtCreatePrivateNamespace')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0043 
+ NtCreateProcess <javascript:showPrototypeDiv('NtCreateProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateProcess(
+	OUT PHANDLE2 ProcessHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN HANDLE2 InheritFromProcessHandle,
+	IN BOOLEAN InheritHandles,
+	IN HANDLE2 SectionHandle OPTIONAL,
+	IN HANDLE2 DebugPort OPTIONAL,
+	IN HANDLE2 ExceptionPort OPTIONAL
+	);
+
+	 0x001f  	 0x001f  	 0x001f  	 0x001f  	 0x0029  	 0x0029  	 0x0029 
+ 0x0029  	 0x0029  	 0x002f  	 0x002f  	 0x002f  	 0x0031  	 0x0031 
+ 0x0046 
+ NtCreateProcessEx <javascript:showPrototypeDiv('NtCreateProcessEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateProcessEx(
+	OUT PHANDLE2 ProcessHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN HANDLE2 InheritFromProcessHandle,
+	IN ULONG CreateFlags,
+	IN HANDLE2 SectionHandle OPTIONAL,
+	IN HANDLE2 DebugObject OPTIONAL,
+	IN HANDLE2 ExceptionPort OPTIONAL,
+	IN ULONG JobMemberLevel
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0030  	 0x0030 
+ 0x0030  	 0x0032  	 0x0032  	 0x0047 
+ NtCreateProfile <javascript:showPrototypeDiv('NtCreateProfile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateProfile(
+	OUT PHANDLE2 ProfileHandle,
+	IN HANDLE2 ProcessHandle,
+	IN PVOID2 Base,
+	IN ULONG Size,
+	IN ULONG BucketShift,
+	IN PULONG Buffer,
+	IN ULONG BufferLength,
+	IN KPROFILE_SOURCE Source,
+	IN ULONG ProcessorMask
+	);
+
+	 0x0020  	 0x0020  	 0x0020  	 0x0020  	 0x002a  	 0x002a  	 0x002a 
+ 0x002a  	 0x002a  	 0x0031  	 0x0031  	 0x0031  	 0x0033  	 0x0033 
+ 0x0048 
+ NtCreateResourceManager
+<javascript:showPrototypeDiv('NtCreateResourceManager')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0069 
+ NtCreateSection <javascript:showPrototypeDiv('NtCreateSection')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateSection(
+	OUT PHANDLE2 SectionHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN PLARGE_INTEGER2 SectionSize OPTIONAL,
+	IN ULONG Protect,
+	IN ULONG Attributes,
+	IN HANDLE2 FileHandle
+	);
+
+	 0x0021  	 0x0021  	 0x0021  	 0x0021  	 0x002b  	 0x002b  	 0x002b 
+ 0x002b  	 0x002b  	 0x0032  	 0x0032  	 0x0032  	 0x0034  	 0x0034 
+ 0x0049 
+ NtCreateSemaphore <javascript:showPrototypeDiv('NtCreateSemaphore')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateSemaphore(
+	OUT PHANDLE2 SemaphoreHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN LONG InitialCount,
+	IN LONG MaximumCount
+	);
+
+	 0x0022  	 0x0022  	 0x0022  	 0x0022  	 0x002c  	 0x002c  	 0x002c 
+ 0x002c  	 0x002c  	 0x0033  	 0x0033  	 0x0033  	 0x0035  	 0x0035 
+ 0x004a 
+ NtCreateSymbolicLinkObject
+<javascript:showPrototypeDiv('NtCreateSymbolicLinkObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateSymbolicLinkObject(
+	OUT PHANDLE2 SymbolicLinkHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN PUNICODE_STRING TargetName
+	);
+
+	 0x0023  	 0x0023  	 0x0023  	 0x0023  	 0x002d  	 0x002d  	 0x002d 
+ 0x002d  	 0x002d  	 0x0034  	 0x0034  	 0x0034  	 0x0036  	 0x0036 
+ 0x004b 
+ NtCreateThread <javascript:showPrototypeDiv('NtCreateThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateThread(
+	OUT PHANDLE2 ThreadHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN HANDLE2 ProcessHandle,
+	OUT PCLIENT_ID ClientId,
+	IN PCONTEXT ThreadContext,
+	IN PUSER_STACK UserStack,
+	IN BOOLEAN CreateSuspended
+	);
+
+	 0x0024  	 0x0024  	 0x0024  	 0x0024  	 0x002e  	 0x002e  	 0x002e 
+ 0x002e  	 0x002e  	 0x0035  	 0x0035  	 0x0035  	 0x0037  	 0x0037 
+ 0x004c 
+ NtCreateThreadEx <javascript:showPrototypeDiv('NtCreateThreadEx')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0181 
+ NtCreateTimer <javascript:showPrototypeDiv('NtCreateTimer')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateTimer(
+	OUT PHANDLE2 TimerHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN TIMER_TYPE TimerType
+	);
+
+	 0x0025  	 0x0025  	 0x0025  	 0x0025  	 0x002f  	 0x002f  	 0x002f 
+ 0x002f  	 0x002f  	 0x0036  	 0x0036  	 0x0036  	 0x0038  	 0x0038 
+ 0x004d 
+ NtCreateToken <javascript:showPrototypeDiv('NtCreateToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateToken(
+	OUT PHANDLE2 TokenHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN TOKEN_TYPE Type,
+	IN PLUID AuthenticationId,
+	IN PLARGE_INTEGER2 ExpirationTime,
+	IN PTOKEN_USER User,
+	IN PTOKEN_GROUPS Groups,
+	IN PTOKEN_PRIVILEGES Privileges,
+	IN PTOKEN_OWNER Owner,
+	IN PTOKEN_PRIMARY_GROUP PrimaryGroup,
+	IN PTOKEN_DEFAULT_DACL DefaultDacl,
+	IN PTOKEN_SOURCE Source
+	);
+
+	 0x0026  	 0x0026  	 0x0026  	 0x0026  	 0x0030  	 0x0030  	 0x0030 
+ 0x0030  	 0x0030  	 0x0037  	 0x0037  	 0x0037  	 0x0039  	 0x0039 
+ 0x004e 
+ NtCreateTransaction
+<javascript:showPrototypeDiv('NtCreateTransaction')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x004f 
+ NtCreateTransactionManager
+<javascript:showPrototypeDiv('NtCreateTransactionManager')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0062 
+ NtCreateWaitablePort
+<javascript:showPrototypeDiv('NtCreateWaitablePort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtCreateWaitablePort(
+	OUT PHANDLE2 PortHandle,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN ULONG MaxConnectionInfoLength,
+	IN ULONG MaxMessageLength,
+	IN ULONG MaxPoolUsage
+	);
+
+	    	    	    	    	 0x0031  	 0x0031  	 0x0031  	 0x0031  	 0x0031 
+ 0x0038  	 0x0038  	 0x0038  	 0x003a  	 0x003a  	 0x0072 
+ NtCreateWinStation
+<javascript:showPrototypeDiv('NtCreateWinStation')>  	    	 0x00d3 
+    	    	    	    	    	    	    	    	    	    	    	    	   
+ NtCreateWorkerFactory
+<javascript:showPrototypeDiv('NtCreateWorkerFactory')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x017a 
+ NtDebugActiveProcess
+<javascript:showPrototypeDiv('NtDebugActiveProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDebugActiveProcess(
+	IN HANDLE2 Process,
+	IN HANDLE2 DebugObject
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0039  	 0x0039 
+ 0x0039  	 0x003b  	 0x003b  	 0x0073 
+ NtDebugContinue <javascript:showPrototypeDiv('NtDebugContinue')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDebugContinue(
+	IN HANDLE2 DebugObject,
+	IN PCLIENT_ID AppClientId,
+	IN NTSTATUS ContinueStatus
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x003a  	 0x003a 
+ 0x003a  	 0x003c  	 0x003c  	 0x0074 
+ NtDelayExecution <javascript:showPrototypeDiv('NtDelayExecution')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDelayExecution(
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Interval
+	);
+
+	 0x0027  	 0x0027  	 0x0027  	 0x0027  	 0x0032  	 0x0032  	 0x0032 
+ 0x0032  	 0x0032  	 0x003b  	 0x003b  	 0x003b  	 0x003d  	 0x003d 
+ 0x0075 
+ NtDeleteAtom <javascript:showPrototypeDiv('NtDeleteAtom')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeleteAtom(
+	IN USHORT Atom
+	);
+
+	 0x0028  	 0x0028  	 0x0028  	 0x0028  	 0x0033  	 0x0033  	 0x0033 
+ 0x0033  	 0x0033  	 0x003c  	 0x003c  	 0x003c  	 0x003e  	 0x003e 
+ 0x0076 
+ NtDeleteBootEntry <javascript:showPrototypeDiv('NtDeleteBootEntry')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeleteBootEntry(
+	IN PUNICODE_STRING EntryName,
+	IN PUNICODE_STRING EntryValue
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x003d  	 0x003d 
+ 0x003d  	 0x003f  	 0x003f  	 0x0077 
+ NtDeleteDriverEntry <javascript:showPrototypeDiv('NtDeleteDriverEntry')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeleteDriverEntry(
+	IN PUNICODE_STRING DriverName,
+	IN PUNICODE_STRING DriverPath
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x0040 
+ 0x0040  	 0x0078 
+ NtDeleteFile <javascript:showPrototypeDiv('NtDeleteFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeleteFile(
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0029  	 0x0029  	 0x0029  	 0x0029  	 0x0034  	 0x0034  	 0x0034 
+ 0x0034  	 0x0034  	 0x003e  	 0x003e  	 0x003e  	 0x0041  	 0x0041 
+ 0x0079 
+ NtDeleteKey <javascript:showPrototypeDiv('NtDeleteKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeleteKey(
+	IN HANDLE2 KeyHandle
+	);
+
+	 0x002a  	 0x002a  	 0x002a  	 0x002a  	 0x0035  	 0x0035  	 0x0035 
+ 0x0035  	 0x0035  	 0x003f  	 0x003f  	 0x003f  	 0x0042  	 0x0042 
+ 0x007a 
+ NtDeleteObjectAuditAlarm
+<javascript:showPrototypeDiv('NtDeleteObjectAuditAlarm')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeleteObjectAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN BOOLEAN GenerateOnClose
+	);
+
+	 0x002b  	 0x002b  	 0x002b  	 0x002b  	 0x0036  	 0x0036  	 0x0036 
+ 0x0036  	 0x0036  	 0x0040  	 0x0040  	 0x0040  	 0x0043  	 0x0043 
+ 0x007c 
+ NtDeletePrivateNamespace
+<javascript:showPrototypeDiv('NtDeletePrivateNamespace')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x007b 
+ NtDeleteValueKey <javascript:showPrototypeDiv('NtDeleteValueKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeleteValueKey(
+	IN HANDLE2 KeyHandle,
+	IN PUNICODE_STRING ValueName
+	);
+
+	 0x002c  	 0x002c  	 0x002c  	 0x002c  	 0x0037  	 0x0037  	 0x0037 
+ 0x0037  	 0x0037  	 0x0041  	 0x0041  	 0x0041  	 0x0044  	 0x0044 
+ 0x007d 
+ NtDeviceIoControlFile
+<javascript:showPrototypeDiv('NtDeviceIoControlFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDeviceIoControlFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN ULONG IoControlCode,
+	IN PVOID2 InputBuffer OPTIONAL,
+	IN ULONG InputBufferLength,
+	OUT PVOID2 OutputBuffer OPTIONAL,
+	IN ULONG OutputBufferLength
+	);
+
+	 0x002d  	 0x002d  	 0x002d  	 0x002d  	 0x0038  	 0x0038  	 0x0038 
+ 0x0038  	 0x0038  	 0x0042  	 0x0042  	 0x0042  	 0x0045  	 0x0045 
+ 0x007e 
+ NtDisplayString <javascript:showPrototypeDiv('NtDisplayString')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDisplayString(
+	IN PUNICODE_STRING String
+	);
+
+	 0x002e  	 0x002e  	 0x002e  	 0x002e  	 0x0039  	 0x0039  	 0x0039 
+ 0x0039  	 0x0039  	 0x0043  	 0x0043  	 0x0043  	 0x0046  	 0x0046 
+ 0x007f 
+ NtDuplicateObject <javascript:showPrototypeDiv('NtDuplicateObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDuplicateObject(
+	IN HANDLE2 SourceProcessHandle,
+	IN HANDLE2 SourceHandle,
+	IN HANDLE2 TargetProcessHandle,
+	OUT PHANDLE2 TargetHandle OPTIONAL,
+	IN ACCESS_MASK DesiredAccess,
+	IN ULONG Attributes,
+	IN ULONG Options
+	);
+
+	 0x002f  	 0x002f  	 0x002f  	 0x002f  	 0x003a  	 0x003a  	 0x003a 
+ 0x003a  	 0x003a  	 0x0044  	 0x0044  	 0x0044  	 0x0047  	 0x0047 
+ 0x0080 
+ NtDuplicateToken <javascript:showPrototypeDiv('NtDuplicateToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtDuplicateToken(
+	IN HANDLE2 ExistingTokenHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN BOOLEAN EffectiveOnly,
+	IN TOKEN_TYPE TokenType,
+	OUT PHANDLE2 NewTokenHandle
+	);
+
+	 0x0030  	 0x0030  	 0x0030  	 0x0030  	 0x003b  	 0x003b  	 0x003b 
+ 0x003b  	 0x003b  	 0x0045  	 0x0045  	 0x0045  	 0x0048  	 0x0048 
+ 0x0081 
+ NtEnumerateBootEntries
+<javascript:showPrototypeDiv('NtEnumerateBootEntries')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtEnumerateBootEntries(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0046  	 0x0046 
+ 0x0046  	 0x0049  	 0x0049  	 0x0082 
+ NtEnumerateDriverEntries
+<javascript:showPrototypeDiv('NtEnumerateDriverEntries')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtEnumerateDriverEntries(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x004a 
+ 0x004a  	 0x0083 
+ NtEnumerateKey <javascript:showPrototypeDiv('NtEnumerateKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtEnumerateKey(
+	IN HANDLE2 KeyHandle,
+	IN ULONG Index,
+	IN KEY_INFORMATION_CLASS KeyInformationClass,
+	OUT PVOID2 KeyInformation,
+	IN ULONG KeyInformationLength,
+	OUT PULONG ResultLength
+	);
+
+	 0x0031  	 0x0031  	 0x0031  	 0x0031  	 0x003c  	 0x003c  	 0x003c 
+ 0x003c  	 0x003c  	 0x0047  	 0x0047  	 0x0047  	 0x004b  	 0x004b 
+ 0x0084 
+ NtEnumerateSystemEnvironmentValuesEx
+<javascript:showPrototypeDiv('NtEnumerateSystemEnvironmentValuesEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtEnumerateSystemEnvironmentValuesEx(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2,
+	IN ULONG Unknown3
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0048  	 0x0048 
+ 0x0048  	 0x004c  	 0x004c  	 0x0085 
+ NtEnumerateValueKey <javascript:showPrototypeDiv('NtEnumerateValueKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtEnumerateValueKey(
+	IN HANDLE2 KeyHandle,
+	IN ULONG Index,
+	IN KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
+	OUT PVOID2 KeyValueInformation,
+	IN ULONG KeyValueInformationLength,
+	OUT PULONG ResultLength
+	);
+
+	 0x0032  	 0x0032  	 0x0032  	 0x0032  	 0x003d  	 0x003d  	 0x003d 
+ 0x003d  	 0x003d  	 0x0049  	 0x0049  	 0x0049  	 0x004d  	 0x004d 
+ 0x0086 
+ NtExtendSection <javascript:showPrototypeDiv('NtExtendSection')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtExtendSection(
+	IN HANDLE2 SectionHandle,
+	IN PLARGE_INTEGER2 SectionSize
+	);
+
+	 0x0033  	 0x0033  	 0x0033  	 0x0033  	 0x003e  	 0x003e  	 0x003e 
+ 0x003e  	 0x003e  	 0x004a  	 0x004a  	 0x004a  	 0x004e  	 0x004e 
+ 0x0087 
+ NtFilterToken <javascript:showPrototypeDiv('NtFilterToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFilterToken(
+	IN HANDLE2 ExistingTokenHandle,
+	IN ULONG Flags,
+	IN PTOKEN_GROUPS SidsToDisable,
+	IN PTOKEN_PRIVILEGES PrivilegesToDelete,
+	IN PTOKEN_GROUPS SidsToRestricted,
+	OUT PHANDLE2 NewTokenHandle
+	);
+
+	    	    	    	    	 0x003f  	 0x003f  	 0x003f  	 0x003f  	 0x003f 
+ 0x004b  	 0x004b  	 0x004b  	 0x004f  	 0x004f  	 0x0088 
+ NtFindAtom <javascript:showPrototypeDiv('NtFindAtom')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFindAtom(
+	IN PWSTR String,
+	IN ULONG StringLength,
+	OUT PUSHORT Atom
+	);
+
+	 0x0034  	 0x0034  	 0x0034  	 0x0034  	 0x0040  	 0x0040  	 0x0040 
+ 0x0040  	 0x0040  	 0x004c  	 0x004c  	 0x004c  	 0x0050  	 0x0050 
+ 0x0089 
+ NtFlushBuffersFile <javascript:showPrototypeDiv('NtFlushBuffersFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFlushBuffersFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock
+	);
+
+	 0x0035  	 0x0035  	 0x0035  	 0x0035  	 0x0041  	 0x0041  	 0x0041 
+ 0x0041  	 0x0041  	 0x004d  	 0x004d  	 0x004d  	 0x0051  	 0x0051 
+ 0x008a 
+ NtFlushInstallUILanguage
+<javascript:showPrototypeDiv('NtFlushInstallUILanguage')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0189 
+ NtFlushInstructionCache
+<javascript:showPrototypeDiv('NtFlushInstructionCache')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFlushInstructionCache(
+	IN HANDLE2 ProcessHandle,
+	IN ULONG BaseAddress OPTIONAL,
+	IN ULONG FlushSize
+	);
+
+	 0x0036  	 0x0036  	 0x0036  	 0x0036  	 0x0042  	 0x0042  	 0x0042 
+ 0x0042  	 0x0042  	 0x004e  	 0x004e  	 0x004e  	 0x0052  	 0x0052 
+ 0x008b 
+ NtFlushKey <javascript:showPrototypeDiv('NtFlushKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFlushKey(
+	IN HANDLE2 KeyHandle
+	);
+
+	 0x0037  	 0x0037  	 0x0037  	 0x0037  	 0x0043  	 0x0043  	 0x0043 
+ 0x0043  	 0x0043  	 0x004f  	 0x004f  	 0x004f  	 0x0053  	 0x0053 
+ 0x008c 
+ NtFlushProcessWriteBuffers
+<javascript:showPrototypeDiv('NtFlushProcessWriteBuffers')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x008d 
+ NtFlushVirtualMemory
+<javascript:showPrototypeDiv('NtFlushVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFlushVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	INOUT PULONG BaseAddress,
+	INOUT PULONG FlushSize,
+	OUT PIO_STATUS_BLOCK IoStatusBlock
+	);
+
+	 0x0038  	 0x0038  	 0x0038  	 0x0038  	 0x0044  	 0x0044  	 0x0044 
+ 0x0044  	 0x0044  	 0x0050  	 0x0050  	 0x0050  	 0x0054  	 0x0054 
+ 0x008e 
+ NtFlushWriteBuffer <javascript:showPrototypeDiv('NtFlushWriteBuffer')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFlushWriteBuffer(
+	VOID void
+	);
+
+	 0x0039  	 0x0039  	 0x0039  	 0x0039  	 0x0045  	 0x0045  	 0x0045 
+ 0x0045  	 0x0045  	 0x0051  	 0x0051  	 0x0051  	 0x0055  	 0x0055 
+ 0x008f 
+ NtFreeUserPhysicalPages
+<javascript:showPrototypeDiv('NtFreeUserPhysicalPages')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFreeUserPhysicalPages(
+	IN HANDLE2 ProcessHandle,
+	INOUT PULONG NumberOfPages,
+	IN PULONG PageFrameNumbers
+	);
+
+	    	    	    	    	 0x0046  	 0x0046  	 0x0046  	 0x0046  	 0x0046 
+ 0x0052  	 0x0052  	 0x0052  	 0x0056  	 0x0056  	 0x0090 
+ NtFreeVirtualMemory <javascript:showPrototypeDiv('NtFreeVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFreeVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	INOUT PULONG BaseAddress,
+	INOUT PULONG FreeSize,
+	IN ULONG FreeType
+	);
+
+	 0x003a  	 0x003a  	 0x003a  	 0x003a  	 0x0047  	 0x0047  	 0x0047 
+ 0x0047  	 0x0047  	 0x0053  	 0x0053  	 0x0053  	 0x0057  	 0x0057 
+ 0x0091 
+ NtFreezeRegistry <javascript:showPrototypeDiv('NtFreezeRegistry')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0092 
+ NtFreezeTransactions
+<javascript:showPrototypeDiv('NtFreezeTransactions')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0093 
+ NtFsControlFile <javascript:showPrototypeDiv('NtFsControlFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtFsControlFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN ULONG FsControlCode,
+	IN PVOID2 InputBuffer OPTIONAL,
+	IN ULONG InputBufferLength,
+	OUT PVOID2 OutputBuffer OPTIONAL,
+	IN ULONG OutputBufferLength
+	);
+
+	 0x003b  	 0x003b  	 0x003b  	 0x003b  	 0x0048  	 0x0048  	 0x0048 
+ 0x0048  	 0x0048  	 0x0054  	 0x0054  	 0x0054  	 0x0058  	 0x0058 
+ 0x0094 
+ NtGetContextThread <javascript:showPrototypeDiv('NtGetContextThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtGetContextThread(
+	IN HANDLE2 ThreadHandle,
+	OUT PCONTEXT Context
+	);
+
+	 0x003c  	 0x003c  	 0x003c  	 0x003c  	 0x0049  	 0x0049  	 0x0049 
+ 0x0049  	 0x0049  	 0x0055  	 0x0055  	 0x0055  	 0x0059  	 0x0059 
+ 0x0095 
+ NtGetCurrentProcessorNumber
+<javascript:showPrototypeDiv('NtGetCurrentProcessorNumber')> 
+
+NTSYSAPI
+ULONG
+NTAPI
+NtGetCurrentProcessorNumber(
+	VOID
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x0126 
+ 0x0126  	 0x016e 
+ NtGetDevicePowerState
+<javascript:showPrototypeDiv('NtGetDevicePowerState')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtGetDevicePowerState(
+	IN HANDLE2 DeviceHandle,
+	OUT PDEVICE_POWER_STATE DevicePowerState
+	);
+
+	    	    	    	    	 0x004a  	 0x004a  	 0x004a  	 0x004a  	 0x004a 
+ 0x0056  	 0x0056  	 0x0056  	 0x005a  	 0x005a  	 0x0096 
+ NtGetMUILicenseInfo
+<javascript:showPrototypeDiv('NtGetMUILicenseInfo')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0186 
+ NtGetMUIRegistryInfo
+<javascript:showPrototypeDiv('NtGetMUIRegistryInfo')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x018a 
+ NtGetNextProcess <javascript:showPrototypeDiv('NtGetNextProcess')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0170 
+ NtGetNextThread <javascript:showPrototypeDiv('NtGetNextThread')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0171 
+ NtGetNlsSectionPtr
+<javascript:showPrototypeDiv('NtGetNlsSectionPtr')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0097 
+ NtGetNotificationResourceManager
+<javascript:showPrototypeDiv('NtGetNotificationResourceManager')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x006b 
+ NtGetPlugPlayEvent <javascript:showPrototypeDiv('NtGetPlugPlayEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtGetPlugPlayEvent(
+	IN ULONG Reserved1,
+	IN ULONG Reserved2,
+	OUT PVOID2 Buffer,
+	IN ULONG BufferLength
+	);
+
+	 0x003d  	 0x003d  	 0x003d  	 0x003d  	 0x004b  	 0x004b  	 0x004b 
+ 0x004b  	 0x004b  	 0x0057  	 0x0057  	 0x0057  	 0x005b  	 0x005b 
+ 0x0098 
+ NtGetTickCount <javascript:showPrototypeDiv('NtGetTickCount')> 
+
+NTSYSAPI
+ULONG
+NTAPI
+NtGetTickCount(
+	VOID
+	);
+
+	 0x003e  	 0x003e  	 0x003e  	 0x003e  	 0x004c  	 0x004c  	 0x004c 
+ 0x004c  	 0x004c  	    	    	    	    	    	   
+ NtGetWriteWatch <javascript:showPrototypeDiv('NtGetWriteWatch')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtGetWriteWatch(
+	IN HANDLE2 ProcessHandle,
+	IN ULONG Flags,
+	IN ULONG BaseAddress,
+	IN ULONG RegionSize,
+	OUT PULONG Buffer,
+	INOUT PULONG BufferEntries,
+	OUT PULONG Granularity
+	);
+
+	    	    	    	    	 0x004d  	 0x004d  	 0x004d  	 0x004d  	 0x004d 
+ 0x0058  	 0x0058  	 0x0058  	 0x005c  	 0x005c  	 0x0099 
+ NtImpersonateAnonymousToken
+<javascript:showPrototypeDiv('NtImpersonateAnonymousToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtImpersonateAnonymousToken(
+	IN HANDLE2 ThreadHandle
+	);
+
+	    	    	    	    	 0x004e  	 0x004e  	 0x004e  	 0x004e  	 0x004e 
+ 0x0059  	 0x0059  	 0x0059  	 0x005d  	 0x005d  	 0x009a 
+ NtImpersonateClientOfPort
+<javascript:showPrototypeDiv('NtImpersonateClientOfPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtImpersonateClientOfPort(
+	IN HANDLE2 PortHandle,
+	IN PPORT_MESSAGE Message
+	);
+
+	 0x003f  	 0x003f  	 0x003f  	 0x003f  	 0x004f  	 0x004f  	 0x004f 
+ 0x004f  	 0x004f  	 0x005a  	 0x005a  	 0x005a  	 0x005e  	 0x005e 
+ 0x009b 
+ NtImpersonateThread <javascript:showPrototypeDiv('NtImpersonateThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtImpersonateThread(
+	IN HANDLE2 ThreadHandle,
+	IN HANDLE2 TargetThreadHandle,
+	IN PSECURITY_QUALITY_OF_SERVICE SecurityQos
+	);
+
+	 0x0040  	 0x0040  	 0x0040  	 0x0040  	 0x0050  	 0x0050  	 0x0050 
+ 0x0050  	 0x0050  	 0x005b  	 0x005b  	 0x005b  	 0x005f  	 0x005f 
+ 0x009c 
+ NtInitializeNlsFiles
+<javascript:showPrototypeDiv('NtInitializeNlsFiles')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x009d 
+ NtInitializeRegistry
+<javascript:showPrototypeDiv('NtInitializeRegistry')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtInitializeRegistry(
+	IN BOOLEAN Setup
+	);
+
+	 0x0041  	 0x0041  	 0x0041  	 0x0041  	 0x0051  	 0x0051  	 0x0051 
+ 0x0051  	 0x0051  	 0x005c  	 0x005c  	 0x005c  	 0x0060  	 0x0060 
+ 0x009e 
+ NtInitiatePowerAction
+<javascript:showPrototypeDiv('NtInitiatePowerAction')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtInitiatePowerAction(
+	IN POWER_ACTION SystemAction,
+	IN SYSTEM_POWER_STATE MinSystemState,
+	IN ULONG Flags,
+	IN BOOLEAN Asynchronous
+	);
+
+	    	    	    	    	 0x0052  	 0x0052  	 0x0052  	 0x0052  	 0x0052 
+ 0x005d  	 0x005d  	 0x005d  	 0x0061  	 0x0061  	 0x009f 
+ NtIsProcessInJob <javascript:showPrototypeDiv('NtIsProcessInJob')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtIsProcessInJob(
+	IN HANDLE2 ProcessHandle,
+	IN HANDLE2 JobHandle OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x005e  	 0x005e 
+ 0x005e  	 0x0062  	 0x0062  	 0x00a0 
+ NtIsSystemResumeAutomatic
+<javascript:showPrototypeDiv('NtIsSystemResumeAutomatic')> 
+
+NTSYSAPI
+BOOLEAN
+NTAPI
+NtIsSystemResumeAutomatic(
+	VOID
+	);
+
+	    	    	    	    	 0x0053  	 0x0053  	 0x0053  	 0x0053  	 0x0053 
+ 0x005f  	 0x005f  	 0x005f  	 0x0063  	 0x0063  	 0x00a1 
+ NtIsUILanguageComitted
+<javascript:showPrototypeDiv('NtIsUILanguageComitted')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0188 
+ NtListTransactions
+<javascript:showPrototypeDiv('NtListTransactions')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0185 
+ NtListenChannel <javascript:showPrototypeDiv('NtListenChannel')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtListenChannel(
+	IN HANDLE2 ChannelHandle,
+	OUT PPCHANNEL_MESSAGE Message
+	);
+
+	 0x00ce  	 0x00cd  	 0x00cd  	 0x00cd  	 0x00f2  	 0x00f2  	 0x00f2 
+ 0x00f2  	 0x00f2  	    	    	    	    	    	   
+ NtListenPort <javascript:showPrototypeDiv('NtListenPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtListenPort(
+	IN HANDLE2 PortHandle,
+	OUT PPORT_MESSAGE Message
+	);
+
+	 0x0042  	 0x0042  	 0x0042  	 0x0042  	 0x0054  	 0x0054  	 0x0054 
+ 0x0054  	 0x0054  	 0x0060  	 0x0060  	 0x0060  	 0x0064  	 0x0064 
+ 0x00a2 
+ NtLoadDriver <javascript:showPrototypeDiv('NtLoadDriver')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLoadDriver(
+	IN PUNICODE_STRING DriverServiceName
+	);
+
+	 0x0043  	 0x0043  	 0x0043  	 0x0043  	 0x0055  	 0x0055  	 0x0055 
+ 0x0055  	 0x0055  	 0x0061  	 0x0061  	 0x0061  	 0x0065  	 0x0065 
+ 0x00a3 
+ NtLoadKey <javascript:showPrototypeDiv('NtLoadKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLoadKey(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	IN POBJECT_ATTRIBUTES2 FileObjectAttributes
+	);
+
+	 0x0044  	 0x0044  	 0x0044  	 0x0044  	 0x0056  	 0x0056  	 0x0056 
+ 0x0056  	 0x0056  	 0x0062  	 0x0062  	 0x0062  	 0x0066  	 0x0066 
+ 0x00a4 
+ NtLoadKey2 <javascript:showPrototypeDiv('NtLoadKey2')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLoadKey2(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	IN POBJECT_ATTRIBUTES2 FileObjectAttributes,
+	IN ULONG Flags
+	);
+
+	 0x0045  	 0x0045  	 0x0045  	 0x0045  	 0x0057  	 0x0057  	 0x0057 
+ 0x0057  	 0x0057  	 0x0063  	 0x0063  	 0x0063  	 0x0067  	 0x0067 
+ 0x00a5 
+ NtLoadKeyEx <javascript:showPrototypeDiv('NtLoadKeyEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLoadKeyEx(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	IN POBJECT_ATTRIBUTES2 FileObjectAttributes,
+	IN ULONG Flags,
+	IN HANDLE2 Key OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x0068 
+ 0x0068  	 0x00a6 
+ NtLockFile <javascript:showPrototypeDiv('NtLockFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLockFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PULARGE_INTEGER2 LockOffset,
+	IN PULARGE_INTEGER2 LockLength,
+	IN ULONG Key,
+	IN BOOLEAN FailImmediately,
+	IN BOOLEAN ExclusiveLock
+	);
+
+	 0x0046  	 0x0046  	 0x0046  	 0x0046  	 0x0058  	 0x0058  	 0x0058 
+ 0x0058  	 0x0058  	 0x0064  	 0x0064  	 0x0064  	 0x0069  	 0x0069 
+ 0x00a7 
+ NtLockProductActivationKeys
+<javascript:showPrototypeDiv('NtLockProductActivationKeys')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLockProductActivationKeys(
+	INOUT PULONG ProductBuild OPTIONAL,
+	OUT PSAFEBOOT_MODE InitSafeBootMode OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0065  	 0x0065 
+ 0x0065  	 0x006a  	 0x006a  	 0x00a8 
+ NtLockRegistryKey <javascript:showPrototypeDiv('NtLockRegistryKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLockRegistryKey(
+	IN HANDLE2 Key
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0066  	 0x0066 
+ 0x0066  	 0x006b  	 0x006b  	 0x00a9 
+ NtLockVirtualMemory <javascript:showPrototypeDiv('NtLockVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtLockVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	INOUT PULONG BaseAddress,
+	INOUT PULONG LockSize,
+	IN ULONG LockType
+	);
+
+	 0x0047  	 0x0047  	 0x0047  	 0x0047  	 0x0059  	 0x0059  	 0x0059 
+ 0x0059  	 0x0059  	 0x0067  	 0x0067  	 0x0067  	 0x006c  	 0x006c 
+ 0x00aa 
+ NtMakePermanentObject
+<javascript:showPrototypeDiv('NtMakePermanentObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtMakePermanentObject(
+	IN HANDLE2 Object
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0068  	 0x0068 
+ 0x0068  	 0x006d  	 0x006d  	 0x00ab 
+ NtMakeTemporaryObject
+<javascript:showPrototypeDiv('NtMakeTemporaryObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtMakeTemporaryObject(
+	IN HANDLE2 Handle
+	);
+
+	 0x0048  	 0x0048  	 0x0048  	 0x0048  	 0x005a  	 0x005a  	 0x005a 
+ 0x005a  	 0x005a  	 0x0069  	 0x0069  	 0x0069  	 0x006e  	 0x006e 
+ 0x00ac 
+ NtMapCMFModule <javascript:showPrototypeDiv('NtMapCMFModule')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0184 
+ NtMapUserPhysicalPages
+<javascript:showPrototypeDiv('NtMapUserPhysicalPages')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtMapUserPhysicalPages(
+	IN ULONG BaseAddress,
+	IN PULONG NumberOfPages,
+	IN PULONG PageFrameNumbers
+	);
+
+	    	    	    	    	 0x005b  	 0x005b  	 0x005b  	 0x005b  	 0x005b 
+ 0x006a  	 0x006a  	 0x006a  	 0x006f  	 0x006f  	 0x00ad 
+ NtMapUserPhysicalPagesScatter
+<javascript:showPrototypeDiv('NtMapUserPhysicalPagesScatter')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtMapUserPhysicalPagesScatter(
+	IN PULONG BaseAddresses,
+	IN PULONG NumberOfPages,
+	IN PULONG PageFrameNumbers
+	);
+
+	    	    	    	    	 0x005c  	 0x005c  	 0x005c  	 0x005c  	 0x005c 
+ 0x006b  	 0x006b  	 0x006b  	 0x0070  	 0x0070  	 0x00ae 
+ NtMapViewOfSection <javascript:showPrototypeDiv('NtMapViewOfSection')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtMapViewOfSection(
+	IN HANDLE2 SectionHandle,
+	IN HANDLE2 ProcessHandle,
+	INOUT PULONG BaseAddress,
+	IN ULONG ZeroBits,
+	IN ULONG CommitSize,
+	INOUT PLARGE_INTEGER2 SectionOffset OPTIONAL,
+	INOUT PULONG ViewSize,
+	IN SECTION_INHERIT InheritDisposition,
+	IN ULONG AllocationType,
+	IN ULONG Protect
+	);
+
+	 0x0049  	 0x0049  	 0x0049  	 0x0049  	 0x005d  	 0x005d  	 0x005d 
+ 0x005d  	 0x005d  	 0x006c  	 0x006c  	 0x006c  	 0x0071  	 0x0071 
+ 0x00af 
+	 NtMarshallTransaction
+<javascript:showPrototypeDiv('NtMarshallTransaction')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0177 
+ NtModifyBootEntry <javascript:showPrototypeDiv('NtModifyBootEntry')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtModifyBootEntry(
+	IN PUNICODE_STRING EntryName,
+	IN PUNICODE_STRING EntryValue
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x006d  	 0x006d 
+ 0x006d  	 0x0072  	 0x0072  	 0x00b0 
+ NtModifyDriverEntry <javascript:showPrototypeDiv('NtModifyDriverEntry')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtModifyDriverEntry(
+	IN PUNICODE_STRING DriverName,
+	IN PUNICODE_STRING DriverPath
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x0073 
+ 0x0073  	 0x00b1 
+ NtNotifyChangeDirectoryFile
+<javascript:showPrototypeDiv('NtNotifyChangeDirectoryFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtNotifyChangeDirectoryFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PFILE_NOTIFY_INFORMATION Buffer,
+	IN ULONG BufferLength,
+	IN ULONG NotifyFilter,
+	IN BOOLEAN WatchSubtree
+	);
+
+	 0x004a  	 0x004a  	 0x004a  	 0x004a  	 0x005e  	 0x005e  	 0x005e 
+ 0x005e  	 0x005e  	 0x006e  	 0x006e  	 0x006e  	 0x0074  	 0x0074 
+ 0x00b2 
+ NtNotifyChangeKey <javascript:showPrototypeDiv('NtNotifyChangeKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtNotifyChangeKey(
+	IN HANDLE2 KeyHandle,
+	IN HANDLE2 EventHandle OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN ULONG NotifyFilter,
+	IN BOOLEAN WatchSubtree,
+	IN PVOID2 Buffer,
+	IN ULONG BufferLength,
+	IN BOOLEAN Asynchronous
+	);
+
+	 0x004b  	 0x004b  	 0x004b  	 0x004b  	 0x005f  	 0x005f  	 0x005f 
+ 0x005f  	 0x005f  	 0x006f  	 0x006f  	 0x006f  	 0x0075  	 0x0075 
+ 0x00b3 
+ NtNotifyChangeMultipleKeys
+<javascript:showPrototypeDiv('NtNotifyChangeMultipleKeys')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtNotifyChangeMultipleKeys(
+	IN HANDLE2 KeyHandle,
+	IN ULONG Flags,
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	IN HANDLE2 EventHandle OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN ULONG NotifyFilter,
+	IN BOOLEAN WatchSubtree,
+	IN PVOID2 Buffer,
+	IN ULONG BufferLength,
+	IN BOOLEAN Asynchronous
+	);
+
+	    	    	    	    	 0x0060  	 0x0060  	 0x0060  	 0x0060  	 0x0060 
+ 0x0070  	 0x0070  	 0x0070  	 0x0076  	 0x0076  	 0x00b4 
+ NtOpenChannel <javascript:showPrototypeDiv('NtOpenChannel')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenChannel(
+	OUT PHANDLE2 ChannelHandle,
+	IN PUNICODE_STRING ChannelName
+	);
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenChannel(
+	OUT PHANDLE2 ChannelHandle,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x00cf  	 0x00ce  	 0x00ce  	 0x00ce  	 0x00f3  	 0x00f3  	 0x00f3 
+ 0x00f3  	 0x00f3  	    	    	    	    	    	   
+ NtOpenDirectoryObject
+<javascript:showPrototypeDiv('NtOpenDirectoryObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenDirectoryObject(
+	OUT PHANDLE2 DirectoryHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x004c  	 0x004c  	 0x004c  	 0x004c  	 0x0061  	 0x0061  	 0x0061 
+ 0x0061  	 0x0061  	 0x0071  	 0x0071  	 0x0071  	 0x0077  	 0x0077 
+ 0x00b5 
+ NtOpenEnlistment <javascript:showPrototypeDiv('NtOpenEnlistment')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x006e 
+ NtOpenEvent <javascript:showPrototypeDiv('NtOpenEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenEvent(
+	OUT PHANDLE2 EventHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x004d  	 0x004d  	 0x004d  	 0x004d  	 0x0062  	 0x0062  	 0x0062 
+ 0x0062  	 0x0062  	 0x0072  	 0x0072  	 0x0072  	 0x0078  	 0x0078 
+ 0x00b6 
+ NtOpenEventPair <javascript:showPrototypeDiv('NtOpenEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenEventPair(
+	OUT PHANDLE2 EventPairHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x004e  	 0x004e  	 0x004e  	 0x004e  	 0x0063  	 0x0063  	 0x0063 
+ 0x0063  	 0x0063  	 0x0073  	 0x0073  	 0x0073  	 0x0079  	 0x0079 
+ 0x00b7 
+ NtOpenFile <javascript:showPrototypeDiv('NtOpenFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenFile(
+	OUT PHANDLE2 FileHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN ULONG ShareAccess,
+	IN ULONG OpenOptions
+	);
+
+	 0x004f  	 0x004f  	 0x004f  	 0x004f  	 0x0064  	 0x0064  	 0x0064 
+ 0x0064  	 0x0064  	 0x0074  	 0x0074  	 0x0074  	 0x007a  	 0x007a 
+ 0x00b8 
+ NtOpenIoCompletion <javascript:showPrototypeDiv('NtOpenIoCompletion')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenIoCompletion(
+	OUT PHANDLE2 IoCompletionHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0050  	 0x0050  	 0x0050  	 0x0050  	 0x0065  	 0x0065  	 0x0065 
+ 0x0065  	 0x0065  	 0x0075  	 0x0075  	 0x0075  	 0x007b  	 0x007b 
+ 0x00b9 
+ NtOpenJobObject <javascript:showPrototypeDiv('NtOpenJobObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenJobObject(
+	OUT PHANDLE2 JobHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	    	    	    	    	 0x0066  	 0x0066  	 0x0066  	 0x0066  	 0x0066 
+ 0x0076  	 0x0076  	 0x0076  	 0x007c  	 0x007c  	 0x00ba 
+ NtOpenKey <javascript:showPrototypeDiv('NtOpenKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenKey(
+	OUT PHANDLE2 KeyHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0051  	 0x0051  	 0x0051  	 0x0051  	 0x0067  	 0x0067  	 0x0067 
+ 0x0067  	 0x0067  	 0x0077  	 0x0077  	 0x0077  	 0x007d  	 0x007d 
+ 0x00bb 
+ NtOpenKeyedEvent <javascript:showPrototypeDiv('NtOpenKeyedEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenKeyedEvent(
+	OUT PHANDLE2 KeyedEventHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0118  	 0x0118 
+ 0x0118  	 0x0122  	 0x0122  	 0x016a 
+ NtOpenMutant <javascript:showPrototypeDiv('NtOpenMutant')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenMutant(
+	OUT PHANDLE2 MutantHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0052  	 0x0052  	 0x0052  	 0x0052  	 0x0068  	 0x0068  	 0x0068 
+ 0x0068  	 0x0068  	 0x0078  	 0x0078  	 0x0078  	 0x007e  	 0x007e 
+ 0x00bc 
+ NtOpenObjectAuditAlarm
+<javascript:showPrototypeDiv('NtOpenObjectAuditAlarm')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenObjectAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN PUNICODE_STRING ObjectTypeName,
+	IN PUNICODE_STRING ObjectName,
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN HANDLE2 TokenHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN ACCESS_MASK GrantedAccess,
+	IN PPRIVILEGE_SET Privileges OPTIONAL,
+	IN BOOLEAN ObjectCreation,
+	IN BOOLEAN AccessGranted,
+	OUT PBOOLEAN GenerateOnClose
+	);
+
+	 0x0053  	 0x0053  	 0x0053  	 0x0053  	 0x0069  	 0x0069  	 0x0069 
+ 0x0069  	 0x0069  	 0x0079  	 0x0079  	 0x0079  	 0x007f  	 0x007f 
+ 0x00be 
+ NtOpenPrivateNamespace
+<javascript:showPrototypeDiv('NtOpenPrivateNamespace')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x00bd 
+ NtOpenProcess <javascript:showPrototypeDiv('NtOpenProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenProcess(
+	OUT PHANDLE2 ProcessHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN PCLIENT_ID ClientId OPTIONAL
+	);
+
+	 0x0054  	 0x0054  	 0x0054  	 0x0054  	 0x006a  	 0x006a  	 0x006a 
+ 0x006a  	 0x006a  	 0x007a  	 0x007a  	 0x007a  	 0x0080  	 0x0080 
+ 0x00bf 
+ NtOpenProcessToken <javascript:showPrototypeDiv('NtOpenProcessToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenProcessToken(
+	IN HANDLE2 ProcessHandle,
+	IN ACCESS_MASK DesiredAccess,
+	OUT PHANDLE2 TokenHandle
+	);
+
+	 0x0055  	 0x0055  	 0x0055  	 0x0055  	 0x006b  	 0x006b  	 0x006b 
+ 0x006b  	 0x006b  	 0x007b  	 0x007b  	 0x007b  	 0x0081  	 0x0081 
+ 0x00c0 
+ NtOpenProcessTokenEx
+<javascript:showPrototypeDiv('NtOpenProcessTokenEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenProcessTokenEx(
+	IN HANDLE2 ProcessHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN ULONG HandleAttributes,
+	OUT PHANDLE2 TokenHandle
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x007c  	 0x007c 
+ 0x007c  	 0x0082  	 0x0082  	 0x00c1 
+ NtOpenResourceManager
+<javascript:showPrototypeDiv('NtOpenResourceManager')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x006a 
+ NtOpenSection <javascript:showPrototypeDiv('NtOpenSection')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenSection(
+	OUT PHANDLE2 SectionHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0056  	 0x0056  	 0x0056  	 0x0056  	 0x006c  	 0x006c  	 0x006c 
+ 0x006c  	 0x006c  	 0x007d  	 0x007d  	 0x007d  	 0x0083  	 0x0083 
+ 0x00c2 
+ NtOpenSemaphore <javascript:showPrototypeDiv('NtOpenSemaphore')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenSemaphore(
+	OUT PHANDLE2 SemaphoreHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0057  	 0x0057  	 0x0057  	 0x0057  	 0x006d  	 0x006d  	 0x006d 
+ 0x006d  	 0x006d  	 0x007e  	 0x007e  	 0x007e  	 0x0084  	 0x0084 
+ 0x00c3 
+ NtOpenSession <javascript:showPrototypeDiv('NtOpenSession')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x00c4 
+ NtOpenSymbolicLinkObject
+<javascript:showPrototypeDiv('NtOpenSymbolicLinkObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenSymbolicLinkObject(
+	OUT PHANDLE2 SymbolicLinkHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x0058  	 0x0058  	 0x0058  	 0x0058  	 0x006e  	 0x006e  	 0x006e 
+ 0x006e  	 0x006e  	 0x007f  	 0x007f  	 0x007f  	 0x0085  	 0x0085 
+ 0x00c5 
+ NtOpenThread <javascript:showPrototypeDiv('NtOpenThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenThread(
+	OUT PHANDLE2 ThreadHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	IN PCLIENT_ID ClientId
+	);
+
+	 0x0059  	 0x0059  	 0x0059  	 0x0059  	 0x006f  	 0x006f  	 0x006f 
+ 0x006f  	 0x006f  	 0x0080  	 0x0080  	 0x0080  	 0x0086  	 0x0086 
+ 0x00c6 
+ NtOpenThreadToken <javascript:showPrototypeDiv('NtOpenThreadToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenThreadToken(
+	IN HANDLE2 ThreadHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN BOOLEAN OpenAsSelf,
+	OUT PHANDLE2 TokenHandle
+	);
+
+	 0x005a  	 0x005a  	 0x005a  	 0x005a  	 0x0070  	 0x0070  	 0x0070 
+ 0x0070  	 0x0070  	 0x0081  	 0x0081  	 0x0081  	 0x0087  	 0x0087 
+ 0x00c7 
+ NtOpenThreadTokenEx <javascript:showPrototypeDiv('NtOpenThreadTokenEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenThreadTokenEx(
+	IN HANDLE2 ThreadHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN BOOLEAN OpenAsSelf,
+	IN ULONG HandleAttributes,
+	OUT PHANDLE2 TokenHandle
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0082  	 0x0082 
+ 0x0082  	 0x0088  	 0x0088  	 0x00c8 
+ NtOpenTimer <javascript:showPrototypeDiv('NtOpenTimer')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtOpenTimer(
+	OUT PHANDLE2 TimerHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes
+	);
+
+	 0x005b  	 0x005b  	 0x005b  	 0x005b  	 0x0071  	 0x0071  	 0x0071 
+ 0x0071  	 0x0071  	 0x0083  	 0x0083  	 0x0083  	 0x0089  	 0x0089 
+ 0x00c9 
+ NtOpenTransaction
+<javascript:showPrototypeDiv('NtOpenTransaction')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0050 
+ NtOpenTransactionManager
+<javascript:showPrototypeDiv('NtOpenTransactionManager')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0063 
+ NtOpenWinStation <javascript:showPrototypeDiv('NtOpenWinStation')> 
+    	 0x00d4  	    	    	    	    	    	    	    	    	    	    	   
+    	   
+ NtPlugPlayControl <javascript:showPrototypeDiv('NtPlugPlayControl')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtPlugPlayControl(
+	IN ULONG ControlCode,
+	INOUT PVOID2 Buffer,
+	IN ULONG BufferLength
+	);
+
+//NTSYSAPI
+//NTSTATUS
+// ntapi
+// NtPlugPlayControl(
+//	IN ULONG ControlCode,
+//	INOUT PVOID2 Buffer,
+//	IN ULONG BufferLength,
+//	IN PVOID2 Unknown OPTIONAL
+//	);
+
+	 0x005c  	 0x005c  	 0x005c  	 0x005c  	 0x0072  	 0x0072  	 0x0072 
+ 0x0072  	 0x0072  	 0x0084  	 0x0084  	 0x0084  	 0x008a  	 0x008a 
+ 0x00ca 
+ NtPowerInformation <javascript:showPrototypeDiv('NtPowerInformation')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtPowerInformation(
+	IN POWER_INFORMATION_LEVEL PowerInformationLevel,
+	IN PVOID2 InputBuffer OPTIONAL,
+	IN ULONG InputBufferLength,
+	OUT PVOID2 OutputBuffer OPTIONAL,
+	IN ULONG OutputBufferLength
+	);
+
+	    	    	    	    	 0x0073  	 0x0073  	 0x0073  	 0x0073  	 0x0073 
+ 0x0085  	 0x0085  	 0x0085  	 0x008b  	 0x008b  	 0x00cb 
+ NtPrePrepareComplete
+<javascript:showPrototypeDiv('NtPrePrepareComplete')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x005b 
+ NtPrePrepareEnlistment
+<javascript:showPrototypeDiv('NtPrePrepareEnlistment')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0053 
+ NtPrepareComplete
+<javascript:showPrototypeDiv('NtPrepareComplete')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x005c 
+ NtPrepareEnlistment
+<javascript:showPrototypeDiv('NtPrepareEnlistment')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0054 
+ NtPrivilegeCheck <javascript:showPrototypeDiv('NtPrivilegeCheck')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtPrivilegeCheck(
+	IN HANDLE2 TokenHandle,
+	IN PPRIVILEGE_SET RequiredPrivileges,
+	OUT PBOOLEAN Result
+	);
+
+	 0x005d  	 0x005d  	 0x005d  	 0x005d  	 0x0074  	 0x0074  	 0x0074 
+ 0x0074  	 0x0074  	 0x0086  	 0x0086  	 0x0086  	 0x008c  	 0x008c 
+ 0x00cc 
+ NtPrivilegeObjectAuditAlarm
+<javascript:showPrototypeDiv('NtPrivilegeObjectAuditAlarm')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtPrivilegeObjectAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN HANDLE2 HandleId,
+	IN HANDLE2 TokenHandle,
+	IN ACCESS_MASK DesiredAccess,
+	IN PPRIVILEGE_SET Privileges,
+	IN BOOLEAN AccessGranted
+	);
+
+	 0x005f  	 0x005f  	 0x005f  	 0x005f  	 0x0076  	 0x0076  	 0x0076 
+ 0x0076  	 0x0076  	 0x0087  	 0x0087  	 0x0087  	 0x008d  	 0x008d 
+ 0x00cd 
+ NtPrivilegedServiceAuditAlarm
+<javascript:showPrototypeDiv('NtPrivilegedServiceAuditAlarm')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtPrivilegedServiceAuditAlarm(
+	IN PUNICODE_STRING SubsystemName,
+	IN PUNICODE_STRING ServiceName,
+	IN HANDLE2 TokenHandle,
+	IN PPRIVILEGE_SET Privileges,
+	IN BOOLEAN AccessGranted
+	);
+
+	 0x005e  	 0x005e  	 0x005e  	 0x005e  	 0x0075  	 0x0075  	 0x0075 
+ 0x0075  	 0x0075  	 0x0088  	 0x0088  	 0x0088  	 0x008e  	 0x008e 
+ 0x00ce 
+ NtPropagationComplete
+<javascript:showPrototypeDiv('NtPropagationComplete')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0178 
+ NtPropagationFailed
+<javascript:showPrototypeDiv('NtPropagationFailed')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0179 
+ NtProtectVirtualMemory
+<javascript:showPrototypeDiv('NtProtectVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtProtectVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	INOUT PULONG BaseAddress,
+	INOUT PULONG ProtectSize,
+	IN ULONG NewProtect,
+	OUT PULONG OldProtect
+	);
+
+	 0x0060  	 0x0060  	 0x0060  	 0x0060  	 0x0077  	 0x0077  	 0x0077 
+ 0x0077  	 0x0077  	 0x0089  	 0x0089  	 0x0089  	 0x008f  	 0x008f 
+ 0x00cf 
+ NtPullTransaction
+<javascript:showPrototypeDiv('NtPullTransaction')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0176 
+ NtPulseEvent <javascript:showPrototypeDiv('NtPulseEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtPulseEvent(
+	IN HANDLE2 EventHandle,
+	OUT PULONG PreviousState OPTIONAL
+	);
+
+	 0x0061  	 0x0061  	 0x0061  	 0x0061  	 0x0078  	 0x0078  	 0x0078 
+ 0x0078  	 0x0078  	 0x008a  	 0x008a  	 0x008a  	 0x0090  	 0x0090 
+ 0x00d0 
+ NtQueryAttributesFile
+<javascript:showPrototypeDiv('NtQueryAttributesFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryAttributesFile(
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	OUT PFILE_BASIC_INFORMATION FileInformation
+	);
+
+	 0x0063  	 0x0063  	 0x0063  	 0x0063  	 0x007a  	 0x007a  	 0x007a 
+ 0x007a  	 0x007a  	 0x008b  	 0x008b  	 0x008b  	 0x0091  	 0x0091 
+ 0x00d1 
+ NtQueryBootEntryOrder
+<javascript:showPrototypeDiv('NtQueryBootEntryOrder')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryBootEntryOrder(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x008c  	 0x008c 
+ 0x008c  	 0x0092  	 0x0092  	 0x00d2 
+ NtQueryBootOptions <javascript:showPrototypeDiv('NtQueryBootOptions')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryBootOptions(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x008d  	 0x008d 
+ 0x008d  	 0x0093  	 0x0093  	 0x00d3 
+ NtQueryDebugFilterState
+<javascript:showPrototypeDiv('NtQueryDebugFilterState')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryDebugFilterState(
+	IN ULONG ComponentId,
+	IN ULONG Level
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x008e  	 0x008e 
+ 0x008e  	 0x0094  	 0x0094  	 0x00d4 
+ NtQueryDefaultLocale
+<javascript:showPrototypeDiv('NtQueryDefaultLocale')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryDefaultLocale(
+	IN BOOLEAN ThreadOrSystem,
+	OUT PLCID Locale
+	);
+
+	 0x0064  	 0x0064  	 0x0064  	 0x0064  	 0x007b  	 0x007b  	 0x007b 
+ 0x007b  	 0x007b  	 0x008f  	 0x008f  	 0x008f  	 0x0095  	 0x0095 
+ 0x00d5 
+ NtQueryDefaultUILanguage
+<javascript:showPrototypeDiv('NtQueryDefaultUILanguage')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryDefaultUILanguage(
+	OUT PLANGID LanguageId
+	);
+
+	    	    	    	    	 0x007c  	 0x007c  	 0x007c  	 0x007c  	 0x007c 
+ 0x0090  	 0x0090  	 0x0090  	 0x0096  	 0x0096  	 0x00d6 
+ NtQueryDirectoryFile
+<javascript:showPrototypeDiv('NtQueryDirectoryFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryDirectoryFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PVOID2 FileInformation,
+	IN ULONG FileInformationLength,
+	IN FILE_INFORMATION_CLASS FileInformationClass,
+	IN BOOLEAN ReturnSingleEntry,
+	IN PUNICODE_STRING FileName OPTIONAL,
+	IN BOOLEAN RestartScan
+	);
+
+	 0x0065  	 0x0065  	 0x0065  	 0x0065  	 0x007d  	 0x007d  	 0x007d 
+ 0x007d  	 0x007d  	 0x0091  	 0x0091  	 0x0091  	 0x0097  	 0x0097 
+ 0x00d7 
+ NtQueryDirectoryObject
+<javascript:showPrototypeDiv('NtQueryDirectoryObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryDirectoryObject(
+	IN HANDLE2 DirectoryHandle,
+	OUT PVOID2 Buffer,
+	IN ULONG BufferLength,
+	IN BOOLEAN ReturnSingleEntry,
+	IN BOOLEAN RestartScan,
+	INOUT PULONG Context,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x0066  	 0x0066  	 0x0066  	 0x0066  	 0x007e  	 0x007e  	 0x007e 
+ 0x007e  	 0x007e  	 0x0092  	 0x0092  	 0x0092  	 0x0098  	 0x0098 
+ 0x00d8 
+ NtQueryDriverEntryOrder
+<javascript:showPrototypeDiv('NtQueryDriverEntryOrder')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryDriverEntryOrder(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x0099 
+ 0x0099  	 0x00d9 
+ NtQueryEaFile <javascript:showPrototypeDiv('NtQueryEaFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryEaFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PFILE_FULL_EA_INFORMATION Buffer,
+	IN ULONG BufferLength,
+	IN BOOLEAN ReturnSingleEntry,
+	IN PFILE_GET_EA_INFORMATION EaList OPTIONAL,
+	IN ULONG EaListLength,
+	IN PULONG EaIndex OPTIONAL,
+	IN BOOLEAN RestartScan
+	);
+
+	 0x0067  	 0x0067  	 0x0067  	 0x0067  	 0x007f  	 0x007f  	 0x007f 
+ 0x007f  	 0x007f  	 0x0093  	 0x0093  	 0x0093  	 0x009a  	 0x009a 
+ 0x00da 
+ NtQueryEvent <javascript:showPrototypeDiv('NtQueryEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryEvent(
+	IN HANDLE2 EventHandle,
+	IN EVENT_INFORMATION_CLASS EventInformationClass,
+	OUT PVOID2 EventInformation,
+	IN ULONG EventInformationLength,
+	OUT PULONG ResultLength OPTIONAL
+	);
+
+	 0x0068  	 0x0068  	 0x0068  	 0x0068  	 0x0080  	 0x0080  	 0x0080 
+ 0x0080  	 0x0080  	 0x0094  	 0x0094  	 0x0094  	 0x009b  	 0x009b 
+ 0x00db 
+ NtQueryFullAttributesFile
+<javascript:showPrototypeDiv('NtQueryFullAttributesFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryFullAttributesFile(
+	IN POBJECT_ATTRIBUTES2 ObjectAttributes,
+	OUT PFILE_NETWORK_OPEN_INFORMATION FileInformation
+	);
+
+	 0x0069  	 0x0069  	 0x0069  	 0x0069  	 0x0081  	 0x0081  	 0x0081 
+ 0x0081  	 0x0081  	 0x0095  	 0x0095  	 0x0095  	 0x009c  	 0x009c 
+ 0x00dc 
+ NtQueryInformationAtom
+<javascript:showPrototypeDiv('NtQueryInformationAtom')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInformationAtom(
+	IN USHORT Atom,
+	IN ATOM_INFORMATION_CLASS AtomInformationClass,
+	OUT PVOID2 AtomInformation,
+	IN ULONG AtomInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x0062  	 0x0062  	 0x0062  	 0x0062  	 0x0079  	 0x0079  	 0x0079 
+ 0x0079  	 0x0079  	 0x0096  	 0x0096  	 0x0096  	 0x009d  	 0x009d 
+ 0x00dd 
+ NtQueryInformationEnlistment
+<javascript:showPrototypeDiv('NtQueryInformationEnlistment')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0070 
+ NtQueryInformationFile
+<javascript:showPrototypeDiv('NtQueryInformationFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInformationFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PVOID2 FileInformation,
+	IN ULONG FileInformationLength,
+	IN FILE_INFORMATION_CLASS FileInformationClass
+	);
+
+	 0x006a  	 0x006a  	 0x006a  	 0x006a  	 0x0082  	 0x0082  	 0x0082 
+ 0x0082  	 0x0082  	 0x0097  	 0x0097  	 0x0097  	 0x009e  	 0x009e 
+ 0x00de 
+ NtQueryInformationJobObject
+<javascript:showPrototypeDiv('NtQueryInformationJobObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInformationJobObject(
+	IN HANDLE2 JobHandle,
+	IN JOBOBJECTINFOCLASS JobInformationClass,
+	OUT PVOID2 JobInformation,
+	IN ULONG JobInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	    	    	    	    	 0x0083  	 0x0083  	 0x0083  	 0x0083  	 0x0083 
+ 0x0098  	 0x0098  	 0x0098  	 0x009f  	 0x009f  	 0x00df 
+ NtQueryInformationPort
+<javascript:showPrototypeDiv('NtQueryInformationPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInformationPort(
+	IN HANDLE2 PortHandle,
+	IN PORT_INFORMATION_CLASS PortInformationClass,
+	OUT PVOID2 PortInformation,
+	IN ULONG PortInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x006c  	 0x006c  	 0x006c  	 0x006c  	 0x0085  	 0x0085  	 0x0085 
+ 0x0085  	 0x0085  	 0x0099  	 0x0099  	 0x0099  	 0x00a0  	 0x00a0 
+ 0x00e0 
+ NtQueryInformationProcess
+<javascript:showPrototypeDiv('NtQueryInformationProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInformationProcess(
+	IN HANDLE2 ProcessHandle,
+	IN PROCESSINFOCLASS ProcessInformationClass,
+	OUT PVOID2 ProcessInformation,
+	IN ULONG ProcessInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x006d  	 0x006d  	 0x006d  	 0x006d  	 0x0086  	 0x0086  	 0x0086 
+ 0x0086  	 0x0086  	 0x009a  	 0x009a  	 0x009a  	 0x00a1  	 0x00a1 
+ 0x00e1 
+ NtQueryInformationResourceManager
+<javascript:showPrototypeDiv('NtQueryInformationResourceManager')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x006c 
+ NtQueryInformationThread
+<javascript:showPrototypeDiv('NtQueryInformationThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInformationThread(
+	IN HANDLE2 ThreadHandle,
+	IN THREADINFOCLASS ThreadInformationClass,
+	OUT PVOID2 ThreadInformation,
+	IN ULONG ThreadInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x006e  	 0x006e  	 0x006e  	 0x006e  	 0x0087  	 0x0087  	 0x0087 
+ 0x0087  	 0x0087  	 0x009b  	 0x009b  	 0x009b  	 0x00a2  	 0x00a2 
+ 0x00e2 
+ NtQueryInformationToken
+<javascript:showPrototypeDiv('NtQueryInformationToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInformationToken(
+	IN HANDLE2 TokenHandle,
+	IN TOKEN_INFORMATION_CLASS TokenInformationClass,
+	OUT PVOID2 TokenInformation,
+	IN ULONG TokenInformationLength,
+	OUT PULONG ReturnLength
+	);
+
+	 0x006f  	 0x006f  	 0x006f  	 0x006f  	 0x0088  	 0x0088  	 0x0088 
+ 0x0088  	 0x0088  	 0x009c  	 0x009c  	 0x009c  	 0x00a3  	 0x00a3 
+ 0x00e3 
+ NtQueryInformationTransaction
+<javascript:showPrototypeDiv('NtQueryInformationTransaction')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0051 
+ NtQueryInformationTransactionManager
+<javascript:showPrototypeDiv('NtQueryInformationTransactionManager')>  	   
+	    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0052 
+ NtQueryInformationWorkerFactory
+<javascript:showPrototypeDiv('NtQueryInformationWorkerFactory')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x017e 
+ NtQueryInstallUILanguage
+<javascript:showPrototypeDiv('NtQueryInstallUILanguage')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryInstallUILanguage(
+	OUT PLANGID LanguageId
+	);
+
+	    	    	    	    	 0x0089  	 0x0089  	 0x0089  	 0x0089  	 0x0089 
+ 0x009d  	 0x009d  	 0x009d  	 0x00a4  	 0x00a4  	 0x00e4 
+ NtQueryIntervalProfile
+<javascript:showPrototypeDiv('NtQueryIntervalProfile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryIntervalProfile(
+	IN KPROFILE_SOURCE Source,
+	OUT PULONG Interval
+	);
+
+	 0x0070  	 0x0070  	 0x0070  	 0x0070  	 0x008a  	 0x008a  	 0x008a 
+ 0x008a  	 0x008a  	 0x009e  	 0x009e  	 0x009e  	 0x00a5  	 0x00a5 
+ 0x00e5 
+ NtQueryIoCompletion <javascript:showPrototypeDiv('NtQueryIoCompletion')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryIoCompletion(
+	IN HANDLE2 IoCompletionHandle,
+	IN IO_COMPLETION_INFORMATION_CLASS IoCompletionInformationClass,
+	OUT PVOID2 IoCompletionInformation,
+	IN ULONG IoCompletionInformationLength,
+	OUT PULONG ResultLength OPTIONAL
+	);
+
+	 0x006b  	 0x006b  	 0x006b  	 0x006b  	 0x0084  	 0x0084  	 0x0084 
+ 0x0084  	 0x0084  	 0x009f  	 0x009f  	 0x009f  	 0x00a6  	 0x00a6 
+ 0x00e6 
+ NtQueryKey <javascript:showPrototypeDiv('NtQueryKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryKey(
+	IN HANDLE2 KeyHandle,
+	IN KEY_INFORMATION_CLASS KeyInformationClass,
+	OUT PVOID2 KeyInformation,
+	IN ULONG KeyInformationLength,
+	OUT PULONG ResultLength
+	);
+
+	 0x0071  	 0x0071  	 0x0071  	 0x0071  	 0x008b  	 0x008b  	 0x008b 
+ 0x008b  	 0x008b  	 0x00a0  	 0x00a0  	 0x00a0  	 0x00a7  	 0x00a7 
+ 0x00e7 
+ NtQueryLicenseValue
+<javascript:showPrototypeDiv('NtQueryLicenseValue')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0183 
+ NtQueryMultipleValueKey
+<javascript:showPrototypeDiv('NtQueryMultipleValueKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryMultipleValueKey(
+	IN HANDLE2 KeyHandle,
+	INOUT PKEY_VALUE_ENTRY ValueList,
+	IN ULONG NumberOfValues,
+	OUT PVOID2 Buffer,
+	INOUT PULONG Length,
+	OUT PULONG ReturnLength
+	);
+
+	 0x0072  	 0x0072  	 0x0072  	 0x0072  	 0x008c  	 0x008c  	 0x008c 
+ 0x008c  	 0x008c  	 0x00a1  	 0x00a1  	 0x00a1  	 0x00a8  	 0x00a8 
+ 0x00e8 
+ NtQueryMutant <javascript:showPrototypeDiv('NtQueryMutant')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryMutant(
+	IN HANDLE2 MutantHandle,
+	IN MUTANT_INFORMATION_CLASS MutantInformationClass,
+	OUT PVOID2 MutantInformation,
+	IN ULONG MutantInformationLength,
+	OUT PULONG ResultLength OPTIONAL
+	);
+
+	 0x0073  	 0x0073  	 0x0073  	 0x0073  	 0x008d  	 0x008d  	 0x008d 
+ 0x008d  	 0x008d  	 0x00a2  	 0x00a2  	 0x00a2  	 0x00a9  	 0x00a9 
+ 0x00e9 
+ NtQueryObject <javascript:showPrototypeDiv('NtQueryObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryObject(
+	IN HANDLE2 ObjectHandle,
+	IN OBJECT_INFORMATION_CLASS ObjectInformationClass,
+	OUT PVOID2 ObjectInformation,
+	IN ULONG ObjectInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x0074  	 0x0074  	 0x0074  	 0x0074  	 0x008e  	 0x008e  	 0x008e 
+ 0x008e  	 0x008e  	 0x00a3  	 0x00a3  	 0x00a3  	 0x00aa  	 0x00aa 
+ 0x00ea 
+ NtQueryOleDirectoryFile
+<javascript:showPrototypeDiv('NtQueryOleDirectoryFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryOleDirectoryFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL ,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PVOID2 Buffer,
+	IN ULONG BufferLength,
+	IN FILE_INFORMATION_CLASS FileInformationClass,
+	IN BOOLEAN ReturnSingleEntry,
+	IN PUNICODE_STRING FileName,
+	IN BOOLEAN RestartScan
+	);
+
+	 0x0075  	 0x0075  	 0x0075  	 0x0075  	    	    	    	    	   
+    	    	    	    	    	   
+ NtQueryOpenSubKeys <javascript:showPrototypeDiv('NtQueryOpenSubKeys')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryOpenSubKeys(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	OUT PULONG NumberOfKeys
+	);
+
+	    	    	    	    	 0x008f  	 0x008f  	 0x008f  	 0x008f  	 0x008f 
+ 0x00a4  	 0x00a4  	 0x00a4  	 0x00ab  	 0x00ab  	 0x00eb 
+ NtQueryOpenSubKeysEx
+<javascript:showPrototypeDiv('NtQueryOpenSubKeysEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryOpenSubKeysEx(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	IN ULONG SubKeyInformationLength,
+	OUT POPEN_SUB_KEY_INFORMATION SubkeyInformation,
+	OUT PULONG ReturnLength
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x00ac 
+ 0x00ac  	 0x00ec 
+ NtQueryPerformanceCounter
+<javascript:showPrototypeDiv('NtQueryPerformanceCounter')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryPerformanceCounter(
+	OUT PLARGE_INTEGER2 PerformanceCount,
+	OUT PLARGE_INTEGER2 PerformanceFrequency OPTIONAL
+	);
+
+	 0x0076  	 0x0076  	 0x0076  	 0x0076  	 0x0090  	 0x0090  	 0x0090 
+ 0x0090  	 0x0090  	 0x00a5  	 0x00a5  	 0x00a5  	 0x00ad  	 0x00ad 
+ 0x00ed 
+ NtQueryPortInformationProcess
+<javascript:showPrototypeDiv('NtQueryPortInformationProcess')> 
+
+NTSYSAPI
+BOOLEAN
+NTAPI
+NtQueryPortInformationProcess(
+	VOID
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x011b  	 0x011b 
+ 0x011b  	 0x0125  	 0x0125  	 0x016d 
+ NtQueryQuotaInformationFile
+<javascript:showPrototypeDiv('NtQueryQuotaInformationFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryQuotaInformationFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PFILE_USER_QUOTA_INFORMATION Buffer,
+	IN ULONG BufferLength,
+	IN BOOLEAN ReturnSingleEntry,
+	IN PFILE_QUOTA_LIST_INFORMATION QuotaList OPTIONAL,
+	IN ULONG QuotaListLength,
+	IN PSID ResumeSid OPTIONAL,
+	IN BOOLEAN RestartScan
+	);
+
+	    	    	    	    	 0x0091  	 0x0091  	 0x0091  	 0x0091  	 0x0091 
+ 0x00a6  	 0x00a6  	 0x00a6  	 0x00ae  	 0x00ae  	 0x00ee 
+ NtQuerySection <javascript:showPrototypeDiv('NtQuerySection')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySection(
+	IN HANDLE2 SectionHandle,
+	IN SECTION_INFORMATION_CLASS SectionInformationClass,
+	OUT PVOID2 SectionInformation,
+	IN ULONG SectionInformationLength,
+	OUT PULONG ResultLength OPTIONAL
+	);
+
+	 0x0077  	 0x0077  	 0x0077  	 0x0077  	 0x0092  	 0x0092  	 0x0092 
+ 0x0092  	 0x0092  	 0x00a7  	 0x00a7  	 0x00a7  	 0x00af  	 0x00af 
+ 0x00ef 
+ NtQuerySecurityObject
+<javascript:showPrototypeDiv('NtQuerySecurityObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySecurityObject(
+	IN HANDLE2 Handle,
+	IN SECURITY_INFORMATION SecurityInformation,
+	OUT PSECURITY_DESCRIPTOR SecurityDescriptor,
+	IN ULONG SecurityDescriptorLength,
+	OUT PULONG ReturnLength
+	);
+
+	 0x0078  	 0x0078  	 0x0078  	 0x0078  	 0x0093  	 0x0093  	 0x0093 
+ 0x0093  	 0x0093  	 0x00a8  	 0x00a8  	 0x00a8  	 0x00b0  	 0x00b0 
+ 0x00f0 
+ NtQuerySemaphore <javascript:showPrototypeDiv('NtQuerySemaphore')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySemaphore(
+	IN HANDLE2 SemaphoreHandle,
+	IN SEMAPHORE_INFORMATION_CLASS SemaphoreInformationClass,
+	OUT PVOID2 SemaphoreInformation,
+	IN ULONG SemaphoreInformationLength,
+	OUT PULONG ResultLength OPTIONAL
+	);
+
+	 0x0079  	 0x0079  	 0x0079  	 0x0079  	 0x0094  	 0x0094  	 0x0094 
+ 0x0094  	 0x0094  	 0x00a9  	 0x00a9  	 0x00a9  	 0x00b1  	 0x00b1 
+ 0x00f1 
+ NtQuerySymbolicLinkObject
+<javascript:showPrototypeDiv('NtQuerySymbolicLinkObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySymbolicLinkObject(
+	IN HANDLE2 SymbolicLinkHandle,
+	INOUT PUNICODE_STRING TargetName,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x007a  	 0x007a  	 0x007a  	 0x007a  	 0x0095  	 0x0095  	 0x0095 
+ 0x0095  	 0x0095  	 0x00aa  	 0x00aa  	 0x00aa  	 0x00b2  	 0x00b2 
+ 0x00f2 
+ NtQuerySystemEnvironmentValue
+<javascript:showPrototypeDiv('NtQuerySystemEnvironmentValue')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySystemEnvironmentValue(
+	IN PUNICODE_STRING Name,
+	OUT PVOID2 Value,
+	IN ULONG ValueLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x007b  	 0x007b  	 0x007b  	 0x007b  	 0x0096  	 0x0096  	 0x0096 
+ 0x0096  	 0x0096  	 0x00ab  	 0x00ab  	 0x00ab  	 0x00b3  	 0x00b3 
+ 0x00f3 
+ NtQuerySystemEnvironmentValueEx
+<javascript:showPrototypeDiv('NtQuerySystemEnvironmentValueEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySystemEnvironmentValueEx(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2,
+	IN ULONG Unknown3,
+	IN ULONG Unknown4,
+	IN ULONG Unknown5
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00ac  	 0x00ac 
+ 0x00ac  	 0x00b4  	 0x00b4  	 0x00f4 
+ NtQuerySystemInformation
+<javascript:showPrototypeDiv('NtQuerySystemInformation')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySystemInformation(
+	IN SYSTEM_INFORMATION_CLASS SystemInformationClass,
+	INOUT PVOID2 SystemInformation,
+	IN ULONG SystemInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x007c  	 0x007c  	 0x007c  	 0x007c  	 0x0097  	 0x0097  	 0x0097 
+ 0x0097  	 0x0097  	 0x00ad  	 0x00ad  	 0x00ad  	 0x00b5  	 0x00b5 
+ 0x00f5 
+ NtQuerySystemTime <javascript:showPrototypeDiv('NtQuerySystemTime')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQuerySystemTime(
+	OUT PLARGE_INTEGER2 CurrentTime
+	);
+
+	 0x007d  	 0x007d  	 0x007d  	 0x007d  	 0x0098  	 0x0098  	 0x0098 
+ 0x0098  	 0x0098  	 0x00ae  	 0x00ae  	 0x00ae  	 0x00b6  	 0x00b6 
+ 0x00f6 
+ NtQueryTimer <javascript:showPrototypeDiv('NtQueryTimer')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryTimer(
+	IN HANDLE2 TimerHandle,
+	IN TIMER_INFORMATION_CLASS TimerInformationClass,
+	OUT PVOID2 TimerInformation,
+	IN ULONG TimerInformationLength,
+	OUT PULONG ResultLength OPTIONAL
+	);
+
+	 0x007e  	 0x007e  	 0x007e  	 0x007e  	 0x0099  	 0x0099  	 0x0099 
+ 0x0099  	 0x0099  	 0x00af  	 0x00af  	 0x00af  	 0x00b7  	 0x00b7 
+ 0x00f7 
+ NtQueryTimerResolution
+<javascript:showPrototypeDiv('NtQueryTimerResolution')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryTimerResolution(
+	OUT PULONG CoarsestResolution,
+	OUT PULONG FinestResolution,
+	OUT PULONG ActualResolution
+	);
+
+	 0x007f  	 0x007f  	 0x007f  	 0x007f  	 0x009a  	 0x009a  	 0x009a 
+ 0x009a  	 0x009a  	 0x00b0  	 0x00b0  	 0x00b0  	 0x00b8  	 0x00b8 
+ 0x00f8 
+ NtQueryValueKey <javascript:showPrototypeDiv('NtQueryValueKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryValueKey(
+	IN HANDLE2 KeyHandle,
+	IN PUNICODE_STRING ValueName,
+	IN KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
+	OUT PVOID2 KeyValueInformation,
+	IN ULONG KeyValueInformationLength,
+	OUT PULONG ResultLength
+	);
+
+	 0x0080  	 0x0080  	 0x0080  	 0x0080  	 0x009b  	 0x009b  	 0x009b 
+ 0x009b  	 0x009b  	 0x00b1  	 0x00b1  	 0x00b1  	 0x00b9  	 0x00b9 
+ 0x00f9 
+ NtQueryVirtualMemory
+<javascript:showPrototypeDiv('NtQueryVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	IN ULONG BaseAddress,
+	IN MEMORY_INFORMATION_CLASS MemoryInformationClass,
+	OUT PVOID2 MemoryInformation,
+	IN ULONG MemoryInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x0081  	 0x0081  	 0x0081  	 0x0081  	 0x009c  	 0x009c  	 0x009c 
+ 0x009c  	 0x009c  	 0x00b2  	 0x00b2  	 0x00b2  	 0x00ba  	 0x00ba 
+ 0x00fa 
+ NtQueryVolumeInformationFile
+<javascript:showPrototypeDiv('NtQueryVolumeInformationFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueryVolumeInformationFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PVOID2 VolumeInformation,
+	IN ULONG VolumeInformationLength,
+	IN FS_INFORMATION_CLASS VolumeInformationClass
+	);
+
+	 0x0082  	 0x0082  	 0x0082  	 0x0082  	 0x009d  	 0x009d  	 0x009d 
+ 0x009d  	 0x009d  	 0x00b3  	 0x00b3  	 0x00b3  	 0x00bb  	 0x00bb 
+ 0x00fb 
+ NtQueryWinStationInformation
+<javascript:showPrototypeDiv('NtQueryWinStationInformation')>  	   
+ 0x00d5  	    	    	    	    	    	    	    	    	    	    	    	    	   
+ NtQueueApcThread <javascript:showPrototypeDiv('NtQueueApcThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtQueueApcThread(
+	IN HANDLE2 ThreadHandle,
+	IN PKNORMAL_ROUTINE ApcRoutine,
+	IN ULONG ApcContext OPTIONAL,
+	IN ULONG Argument1 OPTIONAL,
+	IN ULONG Argument2 OPTIONAL
+	);
+
+	 0x0083  	 0x0083  	 0x0083  	 0x0083  	 0x009e  	 0x009e  	 0x009e 
+ 0x009e  	 0x009e  	 0x00b4  	 0x00b4  	 0x00b4  	 0x00bc  	 0x00bc 
+ 0x00fc 
+ NtRaiseException <javascript:showPrototypeDiv('NtRaiseException')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRaiseException(
+	IN PEXCEPTION_RECORD ExceptionRecord,
+	IN PCONTEXT Context,
+	IN BOOLEAN SearchFrames
+	);
+
+	 0x0084  	 0x0084  	 0x0084  	 0x0084  	 0x009f  	 0x009f  	 0x009f 
+ 0x009f  	 0x009f  	 0x00b5  	 0x00b5  	 0x00b5  	 0x00bd  	 0x00bd 
+ 0x00fd 
+ NtRaiseHardError <javascript:showPrototypeDiv('NtRaiseHardError')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRaiseHardError(
+	IN NTSTATUS Status,
+	IN ULONG NumberOfArguments,
+	IN ULONG StringArgumentsMask,
+	IN PULONG_PTR Arguments,
+	IN HARDERROR_RESPONSE_OPTION ResponseOption,
+	OUT PHARDERROR_RESPONSE Response
+	);
+
+	 0x0085  	 0x0085  	 0x0085  	 0x0085  	 0x00a0  	 0x00a0  	 0x00a0 
+ 0x00a0  	 0x00a0  	 0x00b6  	 0x00b6  	 0x00b6  	 0x00be  	 0x00be 
+ 0x00fe 
+ NtReadFile <javascript:showPrototypeDiv('NtReadFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReadFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	OUT PVOID2 Buffer,
+	IN ULONG Length,
+	IN PLARGE_INTEGER2 ByteOffset OPTIONAL,
+	IN PULONG Key OPTIONAL
+	);
+
+	 0x0086  	 0x0086  	 0x0086  	 0x0086  	 0x00a1  	 0x00a1  	 0x00a1 
+ 0x00a1  	 0x00a1  	 0x00b7  	 0x00b7  	 0x00b7  	 0x00bf  	 0x00bf 
+ 0x00ff 
+ NtReadFileScatter <javascript:showPrototypeDiv('NtReadFileScatter')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReadFileScatter(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PFILE_SEGMENT_ELEMENT Buffer,
+	IN ULONG Length,
+	IN PLARGE_INTEGER2 ByteOffset OPTIONAL,
+	IN PULONG Key OPTIONAL
+	);
+
+	 0x0087  	 0x0087  	 0x0087  	 0x0087  	 0x00a2  	 0x00a2  	 0x00a2 
+ 0x00a2  	 0x00a2  	 0x00b8  	 0x00b8  	 0x00b8  	 0x00c0  	 0x00c0 
+ 0x0100 
+ NtReadOnlyEnlistment
+<javascript:showPrototypeDiv('NtReadOnlyEnlistment')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0056 
+ NtReadRequestData <javascript:showPrototypeDiv('NtReadRequestData')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReadRequestData(
+	IN HANDLE2 PortHandle,
+	IN PPORT_MESSAGE Message,
+	IN ULONG Index,
+	OUT PVOID2 Buffer,
+	IN ULONG BufferLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x0088  	 0x0088  	 0x0088  	 0x0088  	 0x00a3  	 0x00a3  	 0x00a3 
+ 0x00a3  	 0x00a3  	 0x00b9  	 0x00b9  	 0x00b9  	 0x00c1  	 0x00c1 
+ 0x0101 
+ NtReadVirtualMemory <javascript:showPrototypeDiv('NtReadVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReadVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	IN ULONG BaseAddress,
+	OUT PVOID2 Buffer,
+	IN ULONG BufferLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x0089  	 0x0089  	 0x0089  	 0x0089  	 0x00a4  	 0x00a4  	 0x00a4 
+ 0x00a4  	 0x00a4  	 0x00ba  	 0x00ba  	 0x00ba  	 0x00c2  	 0x00c2 
+ 0x0102 
+ NtRecoverEnlistment
+<javascript:showPrototypeDiv('NtRecoverEnlistment')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0066 
+ NtRecoverResourceManager
+<javascript:showPrototypeDiv('NtRecoverResourceManager')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0067 
+ NtRecoverTransactionManager
+<javascript:showPrototypeDiv('NtRecoverTransactionManager')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0068 
+ NtRegisterProtocolAddressInformation
+<javascript:showPrototypeDiv('NtRegisterProtocolAddressInformation')>  	   
+	    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0175 
+ NtRegisterThreadTerminatePort
+<javascript:showPrototypeDiv('NtRegisterThreadTerminatePort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRegisterThreadTerminatePort(
+	IN HANDLE2 PortHandle
+	);
+
+	 0x008a  	 0x008a  	 0x008a  	 0x008a  	 0x00a5  	 0x00a5  	 0x00a5 
+ 0x00a5  	 0x00a5  	 0x00bb  	 0x00bb  	 0x00bb  	 0x00c3  	 0x00c3 
+ 0x0103 
+ NtReleaseKeyedEvent <javascript:showPrototypeDiv('NtReleaseKeyedEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReleaseKeyedEvent(
+	IN HANDLE2 KeyedEventHandle,
+	IN ULONG Key,
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0119  	 0x0119 
+ 0x0119  	 0x0123  	 0x0123  	 0x016b 
+ NtReleaseMutant <javascript:showPrototypeDiv('NtReleaseMutant')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReleaseMutant(
+	IN HANDLE2 MutantHandle,
+	OUT PULONG PreviousState
+	);
+
+	 0x008b  	 0x008b  	 0x008b  	 0x008b  	 0x00a6  	 0x00a6  	 0x00a6 
+ 0x00a6  	 0x00a6  	 0x00bc  	 0x00bc  	 0x00bc  	 0x00c4  	 0x00c4 
+ 0x0104 
+ NtReleaseSemaphore <javascript:showPrototypeDiv('NtReleaseSemaphore')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReleaseSemaphore(
+	IN HANDLE2 SemaphoreHandle,
+	IN LONG ReleaseCount,
+	OUT PLONG PreviousCount OPTIONAL
+	);
+
+	 0x008c  	 0x008c  	 0x008c  	 0x008c  	 0x00a7  	 0x00a7  	 0x00a7 
+ 0x00a7  	 0x00a7  	 0x00bd  	 0x00bd  	 0x00bd  	 0x00c5  	 0x00c5 
+ 0x0105 
+ NtReleaseWorkerFactoryWorker
+<javascript:showPrototypeDiv('NtReleaseWorkerFactoryWorker')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x017b 
+ NtRemoveIoCompletion
+<javascript:showPrototypeDiv('NtRemoveIoCompletion')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRemoveIoCompletion(
+	IN HANDLE2 IoCompletionHandle,
+	OUT PULONG CompletionKey,
+	OUT PULONG CompletionValue,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL
+	);
+
+	 0x008d  	 0x008d  	 0x008d  	 0x008d  	 0x00a8  	 0x00a8  	 0x00a8 
+ 0x00a8  	 0x00a8  	 0x00be  	 0x00be  	 0x00be  	 0x00c6  	 0x00c6 
+ 0x0106 
+ NtRemoveIoCompletionEx
+<javascript:showPrototypeDiv('NtRemoveIoCompletionEx')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0174 
+ NtRemoveProcessDebug
+<javascript:showPrototypeDiv('NtRemoveProcessDebug')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRemoveProcessDebug(
+	IN HANDLE2 Process,
+	IN HANDLE2 DebugObject
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00bf  	 0x00bf 
+ 0x00bf  	 0x00c7  	 0x00c7  	 0x0107 
+ NtRenameKey <javascript:showPrototypeDiv('NtRenameKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRenameKey(
+	IN HANDLE2 KeyHandle,
+	IN PUNICODE_STRING ReplacementName
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00c0  	 0x00c0 
+ 0x00c0  	 0x00c8  	 0x00c8  	 0x0108 
+ NtRenameTransactionManager
+<javascript:showPrototypeDiv('NtRenameTransactionManager')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x0064 
+ NtReplaceKey <javascript:showPrototypeDiv('NtReplaceKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReplaceKey(
+	IN POBJECT_ATTRIBUTES2 NewFileObjectAttributes,
+	IN HANDLE2 KeyHandle,
+	IN POBJECT_ATTRIBUTES2 OldFileObjectAttributes
+	);
+
+	 0x008e  	 0x008e  	 0x008e  	 0x008e  	 0x00a9  	 0x00a9  	 0x00a9 
+ 0x00a9  	 0x00a9  	 0x00c1  	 0x00c1  	 0x00c1  	 0x00c9  	 0x00c9 
+ 0x0109 
+ NtReplyPort <javascript:showPrototypeDiv('NtReplyPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReplyPort(
+	IN HANDLE2 PortHandle,
+	IN PPORT_MESSAGE ReplyMessage
+	);
+
+	 0x008f  	 0x008f  	 0x008f  	 0x008f  	 0x00aa  	 0x00aa  	 0x00aa 
+ 0x00aa  	 0x00aa  	 0x00c2  	 0x00c2  	 0x00c2  	 0x00ca  	 0x00ca 
+ 0x010a 
+ NtReplyWaitReceivePort
+<javascript:showPrototypeDiv('NtReplyWaitReceivePort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReplyWaitReceivePort(
+	IN HANDLE2 PortHandle,
+	OUT PULONG PortIdentifier OPTIONAL,
+	IN PPORT_MESSAGE ReplyMessage OPTIONAL,
+	OUT PPORT_MESSAGE Message
+	);
+
+	 0x0090  	 0x0090  	 0x0090  	 0x0090  	 0x00ab  	 0x00ab  	 0x00ab 
+ 0x00ab  	 0x00ab  	 0x00c3  	 0x00c3  	 0x00c3  	 0x00cb  	 0x00cb 
+ 0x010b 
+ NtReplyWaitReceivePortEx
+<javascript:showPrototypeDiv('NtReplyWaitReceivePortEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReplyWaitReceivePortEx(
+	IN HANDLE2 PortHandle,
+	OUT PULONG PortIdentifier OPTIONAL,
+	IN PPORT_MESSAGE ReplyMessage OPTIONAL,
+	OUT PPORT_MESSAGE Message,
+	IN PLARGE_INTEGER2 Timeout
+	);
+
+	    	    	    	    	 0x00ac  	 0x00ac  	 0x00ac  	 0x00ac  	 0x00ac 
+ 0x00c4  	 0x00c4  	 0x00c4  	 0x00cc  	 0x00cc  	 0x010c 
+ NtReplyWaitReplyPort
+<javascript:showPrototypeDiv('NtReplyWaitReplyPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReplyWaitReplyPort(
+	IN HANDLE2 PortHandle,
+	INOUT PPORT_MESSAGE ReplyMessage
+	);
+
+	 0x0091  	 0x0091  	 0x0091  	 0x0091  	 0x00ad  	 0x00ad  	 0x00ad 
+ 0x00ad  	 0x00ad  	 0x00c5  	 0x00c5  	 0x00c5  	 0x00cd  	 0x00cd 
+ 0x010d 
+ NtReplyWaitSendChannel
+<javascript:showPrototypeDiv('NtReplyWaitSendChannel')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReplyWaitSendChannel(
+	IN HANDLE2 ChannelHandle,
+	IN struct P_CHANNEL_MESSAGE ReplyMessage OPTIONAL,
+	OUT struct P_CHANNEL_MESSAGE Message
+	);
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtReplyWaitSendChannel(
+	IN PVOID2 Text,
+	IN ULONG Length,
+	OUT PPCHANNEL_MESSAGE Message
+	);
+
+	 0x00d0  	 0x00cf  	 0x00cf  	 0x00cf  	 0x00f4  	 0x00f4  	 0x00f4 
+ 0x00f4  	 0x00f4  	    	    	    	    	    	   
+ NtRequestDeviceWakeup
+<javascript:showPrototypeDiv('NtRequestDeviceWakeup')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRequestDeviceWakeup(
+	IN HANDLE2 DeviceHandle
+	);
+
+	    	    	    	    	 0x00ae  	 0x00ae  	 0x00ae  	 0x00ae  	 0x00ae 
+ 0x00c6  	 0x00c6  	 0x00c6  	 0x00ce  	 0x00ce  	 0x010e 
+ NtRequestPort <javascript:showPrototypeDiv('NtRequestPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRequestPort(
+	IN HANDLE2 PortHandle,
+	IN PPORT_MESSAGE RequestMessage
+	);
+
+	 0x0092  	 0x0092  	 0x0092  	 0x0092  	 0x00af  	 0x00af  	 0x00af 
+ 0x00af  	 0x00af  	 0x00c7  	 0x00c7  	 0x00c7  	 0x00cf  	 0x00cf 
+ 0x010f 
+ NtRequestWaitReplyPort
+<javascript:showPrototypeDiv('NtRequestWaitReplyPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRequestWaitReplyPort(
+	IN HANDLE2 PortHandle,
+	IN PPORT_MESSAGE RequestMessage,
+	OUT PPORT_MESSAGE ReplyMessage
+	);
+
+	 0x0093  	 0x0093  	 0x0093  	 0x0093  	 0x00b0  	 0x00b0  	 0x00b0 
+ 0x00b0  	 0x00b0  	 0x00c8  	 0x00c8  	 0x00c8  	 0x00d0  	 0x00d0 
+ 0x0110 
+ NtRequestWakeupLatency
+<javascript:showPrototypeDiv('NtRequestWakeupLatency')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRequestWakeupLatency(
+	IN LATENCY_TIME Latency
+	);
+
+	    	    	    	    	 0x00b1  	 0x00b1  	 0x00b1  	 0x00b1  	 0x00b1 
+ 0x00c9  	 0x00c9  	 0x00c9  	 0x00d1  	 0x00d1  	 0x0111 
+ NtResetEvent <javascript:showPrototypeDiv('NtResetEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtResetEvent(
+	IN HANDLE2 EventHandle,
+	OUT PULONG PreviousState OPTIONAL
+	);
+
+	 0x0094  	 0x0094  	 0x0094  	 0x0094  	 0x00b2  	 0x00b2  	 0x00b2 
+ 0x00b2  	 0x00b2  	 0x00ca  	 0x00ca  	 0x00ca  	 0x00d2  	 0x00d2 
+ 0x0112 
+ NtResetWriteWatch <javascript:showPrototypeDiv('NtResetWriteWatch')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtResetWriteWatch(
+	IN HANDLE2 ProcessHandle,
+	IN PVOID2 BaseAddress,
+	IN ULONG RegionSize
+	);
+
+	    	    	    	    	 0x00b3  	 0x00b3  	 0x00b3  	 0x00b3  	 0x00b3 
+ 0x00cb  	 0x00cb  	 0x00cb  	 0x00d3  	 0x00d3  	 0x0113 
+ NtRestoreKey <javascript:showPrototypeDiv('NtRestoreKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtRestoreKey(
+	IN HANDLE2 KeyHandle,
+	IN HANDLE2 FileHandle,
+	IN ULONG Flags
+	);
+
+	 0x0095  	 0x0095  	 0x0095  	 0x0095  	 0x00b4  	 0x00b4  	 0x00b4 
+ 0x00b4  	 0x00b4  	 0x00cc  	 0x00cc  	 0x00cc  	 0x00d4  	 0x00d4 
+ 0x0114 
+ NtResumeProcess <javascript:showPrototypeDiv('NtResumeProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtResumeProcess(
+	IN HANDLE2 Process
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00cd  	 0x00cd 
+ 0x00cd  	 0x00d5  	 0x00d5  	 0x0115 
+ NtResumeThread <javascript:showPrototypeDiv('NtResumeThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtResumeThread(
+	IN HANDLE2 ThreadHandle,
+	OUT PULONG PreviousSuspendCount OPTIONAL
+	);
+
+	 0x0096  	 0x0096  	 0x0096  	 0x0096  	 0x00b5  	 0x00b5  	 0x00b5 
+ 0x00b5  	 0x00b5  	 0x00ce  	 0x00ce  	 0x00ce  	 0x00d6  	 0x00d6 
+ 0x0116 
+ NtRollbackComplete
+<javascript:showPrototypeDiv('NtRollbackComplete')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0057 
+ NtRollbackEnlistment
+<javascript:showPrototypeDiv('NtRollbackEnlistment')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0058 
+ NtRollbackSavepointTransaction
+<javascript:showPrototypeDiv('NtRollbackSavepointTransaction')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x011c 
+ NtRollbackTransaction
+<javascript:showPrototypeDiv('NtRollbackTransaction')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x005a 
+ NtRollforwardTransactionManager
+<javascript:showPrototypeDiv('NtRollforwardTransactionManager')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0065 
+ NtSaveKey <javascript:showPrototypeDiv('NtSaveKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSaveKey(
+	IN HANDLE2 KeyHandle,
+	IN HANDLE2 FileHandle
+	);
+
+	 0x0097  	 0x0097  	 0x0097  	 0x0097  	 0x00b6  	 0x00b6  	 0x00b6 
+ 0x00b6  	 0x00b6  	 0x00cf  	 0x00cf  	 0x00cf  	 0x00d7  	 0x00d7 
+ 0x0117 
+ NtSaveKeyEx <javascript:showPrototypeDiv('NtSaveKeyEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSaveKeyEx(
+	IN HANDLE2 KeyHandle,
+	IN HANDLE2 FileHandle,
+	IN ULONG Flags
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00d0  	 0x00d0 
+ 0x00d0  	 0x00d8  	 0x00d8  	 0x0118 
+ NtSaveMergedKeys <javascript:showPrototypeDiv('NtSaveMergedKeys')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSaveMergedKeys(
+	IN HANDLE2 KeyHandle1,
+	IN HANDLE2 KeyHandle2,
+	IN HANDLE2 FileHandle
+	);
+
+	    	    	    	    	 0x00b7  	 0x00b7  	 0x00b7  	 0x00b7  	 0x00b7 
+ 0x00d1  	 0x00d1  	 0x00d1  	 0x00d9  	 0x00d9  	 0x0119 
+ NtSavepointComplete
+<javascript:showPrototypeDiv('NtSavepointComplete')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x011e 
+ NtSavepointTransaction
+<javascript:showPrototypeDiv('NtSavepointTransaction')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x011d 
+ NtSecureConnectPort <javascript:showPrototypeDiv('NtSecureConnectPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSecureConnectPort(
+	OUT PHANDLE2 PortHandle,
+	IN PUNICODE_STRING PortName,
+	IN PSECURITY_QUALITY_OF_SERVICE SecurityQos,
+	INOUT PPORT_VIEW ClientView OPTIONAL,
+	IN PSID ServerSid OPTIONAL,
+	OUT PREMOTE_PORT_VIEW ServerView OPTIONAL,
+	OUT PULONG MaxMessageLength OPTIONAL,
+	INOUT PVOID2 ConnectInformation OPTIONAL,
+	INOUT PULONG ConnectInformationLength OPTIONAL
+	);
+
+	    	    	    	    	 0x00b8  	 0x00b8  	 0x00b8  	 0x00b8  	 0x00b8 
+ 0x00d2  	 0x00d2  	 0x00d2  	 0x00da  	 0x00da  	 0x011f 
+ NtSendWaitReplyChannel
+<javascript:showPrototypeDiv('NtSendWaitReplyChannel')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSendWaitReplyChannel(
+	IN HANDLE2 ChannelHandle,
+	IN struct P_CHANNEL_MESSAGE RequestMessage,
+	OUT struct P_CHANNEL_MESSAGE ReplyMessage,
+	IN PLARGE_INTEGER2 Timeout
+	);
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSendWaitReplyChannel(
+	IN HANDLE2 ChannelHandle,
+	IN PVOID2 Text,
+	IN ULONG Length,
+	OUT PPCHANNEL_MESSAGE Message
+	);
+
+	 0x00d1  	 0x00d0  	 0x00d0  	 0x00d0  	 0x00f5  	 0x00f5  	 0x00f5 
+ 0x00f5  	 0x00f5  	    	    	    	    	    	   
+ NtSetBootEntryOrder <javascript:showPrototypeDiv('NtSetBootEntryOrder')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetBootEntryOrder(
+	IN ULONG Unknown1,
+	IN ULONG Unknown2
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00d3  	 0x00d3 
+ 0x00d3  	 0x00db  	 0x00db  	 0x0120 
+ NtSetBootOptions <javascript:showPrototypeDiv('NtSetBootOptions')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetBootOptions(
+	IN PBOOT_OPTIONS BootOptions,
+	IN ULONG FieldsToChange
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00d4  	 0x00d4 
+ 0x00d4  	 0x00dc  	 0x00dc  	 0x0121 
+ NtSetContextChannel <javascript:showPrototypeDiv('NtSetContextChannel')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetContextChannel(
+	IN HANDLE2 CHannelHandle
+	);
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetContextChannel(
+	IN ULONG Context
+	);
+
+	 0x00d2  	 0x00d1  	 0x00d1  	 0x00d1  	 0x00f6  	 0x00f6  	 0x00f6 
+ 0x00f6  	 0x00f6  	    	    	    	    	    	   
+ NtSetContextThread <javascript:showPrototypeDiv('NtSetContextThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetContextThread(
+	IN HANDLE2 ThreadHandle,
+	IN PCONTEXT Context
+	);
+
+	 0x0099  	 0x0099  	 0x0099  	 0x0099  	 0x00ba  	 0x00ba  	 0x00ba 
+ 0x00ba  	 0x00ba  	 0x00d5  	 0x00d5  	 0x00d5  	 0x00dd  	 0x00dd 
+ 0x0122 
+ NtSetDebugFilterState
+<javascript:showPrototypeDiv('NtSetDebugFilterState')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetDebugFilterState(
+	IN ULONG ComponentId,
+	IN ULONG Level,
+	IN BOOLEAN Enable
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00d6  	 0x00d6 
+ 0x00d6  	 0x00de  	 0x00de  	 0x0123 
+ NtSetDefaultHardErrorPort
+<javascript:showPrototypeDiv('NtSetDefaultHardErrorPort')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetDefaultHardErrorPort(
+	IN HANDLE2 PortHandle
+	);
+
+	 0x009a  	 0x009a  	 0x009a  	 0x009a  	 0x00bb  	 0x00bb  	 0x00bb 
+ 0x00bb  	 0x00bb  	 0x00d7  	 0x00d7  	 0x00d7  	 0x00df  	 0x00df 
+ 0x0124 
+ NtSetDefaultLocale <javascript:showPrototypeDiv('NtSetDefaultLocale')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetDefaultLocale(
+	IN BOOLEAN ThreadOrSystem,
+	IN LCID Locale
+	);
+
+	 0x009b  	 0x009b  	 0x009b  	 0x009b  	 0x00bc  	 0x00bc  	 0x00bc 
+ 0x00bc  	 0x00bc  	 0x00d8  	 0x00d8  	 0x00d8  	 0x00e0  	 0x00e0 
+ 0x0125 
+ NtSetDefaultUILanguage
+<javascript:showPrototypeDiv('NtSetDefaultUILanguage')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetDefaultUILanguage(
+	IN LANGID LanguageId
+	);
+
+	    	    	    	    	 0x00bd  	 0x00bd  	 0x00bd  	 0x00bd  	 0x00bd 
+ 0x00d9  	 0x00d9  	 0x00d9  	 0x00e1  	 0x00e1  	 0x0126 
+ NtSetDriverEntryOrder
+<javascript:showPrototypeDiv('NtSetDriverEntryOrder')>  	    	   
+    	    	    	    	    	    	    	    	    	    	 0x00e2  	 0x00e2 
+ 0x0127 
+ NtSetEaFile <javascript:showPrototypeDiv('NtSetEaFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetEaFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PFILE_FULL_EA_INFORMATION Buffer,
+	IN ULONG BufferLength
+	);
+
+	 0x009c  	 0x009c  	 0x009c  	 0x009c  	 0x00be  	 0x00be  	 0x00be 
+ 0x00be  	 0x00be  	 0x00da  	 0x00da  	 0x00da  	 0x00e3  	 0x00e3 
+ 0x0128 
+ NtSetEvent <javascript:showPrototypeDiv('NtSetEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetEvent(
+	IN HANDLE2 EventHandle,
+	OUT PULONG PreviousState OPTIONAL
+	);
+
+	 0x009d  	 0x009d  	 0x009d  	 0x009d  	 0x00bf  	 0x00bf  	 0x00bf 
+ 0x00bf  	 0x00bf  	 0x00db  	 0x00db  	 0x00db  	 0x00e4  	 0x00e4 
+ 0x0129 
+ NtSetEventBoostPriority
+<javascript:showPrototypeDiv('NtSetEventBoostPriority')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetEventBoostPriority(
+	IN HANDLE2 EventHandle
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00dc  	 0x00dc 
+ 0x00dc  	 0x00e5  	 0x00e5  	 0x012a 
+ NtSetHighEventPair <javascript:showPrototypeDiv('NtSetHighEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetHighEventPair(
+	IN HANDLE2 EventPairHandle
+	);
+
+	 0x009e  	 0x009e  	 0x009e  	 0x009e  	 0x00c0  	 0x00c0  	 0x00c0 
+ 0x00c0  	 0x00c0  	 0x00dd  	 0x00dd  	 0x00dd  	 0x00e6  	 0x00e6 
+ 0x012b 
+ NtSetHighWaitLowEventPair
+<javascript:showPrototypeDiv('NtSetHighWaitLowEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetHighWaitLowEventPair(
+	IN HANDLE2 EventPairHandle
+	);
+
+	 0x009f  	 0x009f  	 0x009f  	 0x009f  	 0x00c1  	 0x00c1  	 0x00c1 
+ 0x00c1  	 0x00c1  	 0x00de  	 0x00de  	 0x00de  	 0x00e7  	 0x00e7 
+ 0x012c 
+ NtSetHighWaitLowThread
+<javascript:showPrototypeDiv('NtSetHighWaitLowThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetHighWaitLowThread(
+	VOID
+	);
+
+	 0x00a0  	 0x00a0  	 0x00a0  	 0x00a0  	    	    	    	    	   
+    	    	    	    	    	   
+ NtSetInformationDebugObject
+<javascript:showPrototypeDiv('NtSetInformationDebugObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationDebugObject(
+	IN HANDLE2 DebugObject,
+	IN DEBUGOBJECTINFOCLASS DebugObjectInformationClass,
+	IN PVOID2 DebugInformation,
+	IN ULONG DebugInformationLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00df  	 0x00df 
+ 0x00df  	 0x00e8  	 0x00e8  	 0x012d 
+ NtSetInformationEnlistment
+<javascript:showPrototypeDiv('NtSetInformationEnlistment')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x006f 
+ NtSetInformationFile
+<javascript:showPrototypeDiv('NtSetInformationFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PVOID2 FileInformation,
+	IN ULONG FileInformationLength,
+	IN FILE_INFORMATION_CLASS FileInformationClass
+	);
+
+	 0x00a1  	 0x00a1  	 0x00a1  	 0x00a1  	 0x00c2  	 0x00c2  	 0x00c2 
+ 0x00c2  	 0x00c2  	 0x00e0  	 0x00e0  	 0x00e0  	 0x00e9  	 0x00e9 
+ 0x012e 
+ NtSetInformationJobObject
+<javascript:showPrototypeDiv('NtSetInformationJobObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationJobObject(
+	IN HANDLE2 JobHandle,
+	IN JOBOBJECTINFOCLASS JobInformationClass,
+	IN PVOID2 JobInformation,
+	IN ULONG JobInformationLength
+	);
+
+	    	    	    	    	 0x00c3  	 0x00c3  	 0x00c3  	 0x00c3  	 0x00c3 
+ 0x00e1  	 0x00e1  	 0x00e1  	 0x00ea  	 0x00ea  	 0x012f 
+ NtSetInformationKey <javascript:showPrototypeDiv('NtSetInformationKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationKey(
+	IN HANDLE2 KeyHandle,
+	IN KEY_SET_INFORMATION_CLASS KeyInformationClass,
+	IN PVOID2 KeyInformation,
+	IN ULONG KeyInformationLength
+	);
+
+	 0x00a2  	 0x00a2  	 0x00a2  	 0x00a2  	 0x00c4  	 0x00c4  	 0x00c4 
+ 0x00c4  	 0x00c4  	 0x00e2  	 0x00e2  	 0x00e2  	 0x00eb  	 0x00eb 
+ 0x0130 
+ NtSetInformationObject
+<javascript:showPrototypeDiv('NtSetInformationObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationObject(
+	IN HANDLE2 ObjectHandle,
+	IN OBJECT_INFORMATION_CLASS ObjectInformationClass,
+	IN PVOID2 ObjectInformation,
+	IN ULONG ObjectInformationLength
+	);
+
+	 0x00a3  	 0x00a3  	 0x00a3  	 0x00a3  	 0x00c5  	 0x00c5  	 0x00c5 
+ 0x00c5  	 0x00c5  	 0x00e3  	 0x00e3  	 0x00e3  	 0x00ec  	 0x00ec 
+ 0x0131 
+ NtSetInformationProcess
+<javascript:showPrototypeDiv('NtSetInformationProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationProcess(
+	IN HANDLE2 ProcessHandle,
+	IN PROCESSINFOCLASS ProcessInformationClass,
+	IN PVOID2 ProcessInformation,
+	IN ULONG ProcessInformationLength
+	);
+
+	 0x00a4  	 0x00a4  	 0x00a4  	 0x00a4  	 0x00c6  	 0x00c6  	 0x00c6 
+ 0x00c6  	 0x00c6  	 0x00e4  	 0x00e4  	 0x00e4  	 0x00ed  	 0x00ed 
+ 0x0132 
+ NtSetInformationResourceManager
+<javascript:showPrototypeDiv('NtSetInformationResourceManager')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0061 
+ NtSetInformationThread
+<javascript:showPrototypeDiv('NtSetInformationThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationThread(
+	IN HANDLE2 ThreadHandle,
+	IN THREADINFOCLASS ThreadInformationClass,
+	IN PVOID2 ThreadInformation,
+	IN ULONG ThreadInformationLength
+	);
+
+	 0x00a5  	 0x00a5  	 0x00a5  	 0x00a5  	 0x00c7  	 0x00c7  	 0x00c7 
+ 0x00c7  	 0x00c7  	 0x00e5  	 0x00e5  	 0x00e5  	 0x00ee  	 0x00ee 
+ 0x0133 
+ NtSetInformationToken
+<javascript:showPrototypeDiv('NtSetInformationToken')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetInformationToken(
+	IN HANDLE2 TokenHandle,
+	IN TOKEN_INFORMATION_CLASS TokenInformationClass,
+	IN PVOID2 TokenInformation,
+	IN ULONG TokenInformationLength
+	);
+
+	 0x00a6  	 0x00a6  	 0x00a6  	 0x00a6  	 0x00c8  	 0x00c8  	 0x00c8 
+ 0x00c8  	 0x00c8  	 0x00e6  	 0x00e6  	 0x00e6  	 0x00ef  	 0x00ef 
+ 0x0134 
+ NtSetInformationTransaction
+<javascript:showPrototypeDiv('NtSetInformationTransaction')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x005f 
+ NtSetInformationTransactionManager
+<javascript:showPrototypeDiv('NtSetInformationTransactionManager')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0060 
+ NtSetInformationWorkerFactory
+<javascript:showPrototypeDiv('NtSetInformationWorkerFactory')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x017d 
+ NtSetIntervalProfile
+<javascript:showPrototypeDiv('NtSetIntervalProfile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetIntervalProfile(
+	IN ULONG Interval,
+	IN KPROFILE_SOURCE Source
+	);
+
+	 0x00a7  	 0x00a7  	 0x00a7  	 0x00a7  	 0x00c9  	 0x00c9  	 0x00c9 
+ 0x00c9  	 0x00c9  	 0x00e7  	 0x00e7  	 0x00e7  	 0x00f0  	 0x00f0 
+ 0x0135 
+ NtSetIoCompletion <javascript:showPrototypeDiv('NtSetIoCompletion')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetIoCompletion(
+	IN HANDLE2 IoCompletionHandle,
+	IN ULONG CompletionKey,
+	IN ULONG CompletionValue,
+	IN NTSTATUS Status,
+	IN ULONG Information
+	);
+
+	 0x0098  	 0x0098  	 0x0098  	 0x0098  	 0x00b9  	 0x00b9  	 0x00b9 
+ 0x00b9  	 0x00b9  	 0x00e8  	 0x00e8  	 0x00e8  	 0x00f1  	 0x00f1 
+ 0x0136 
+ NtSetLdtEntries <javascript:showPrototypeDiv('NtSetLdtEntries')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetLdtEntries(
+	IN ULONG Selector1,
+	IN LDT_ENTRY LdtEntry1,
+	IN ULONG Selector2,
+	IN LDT_ENTRY LdtEntry2
+	);
+
+	 0x00a8  	 0x00a8  	 0x00a8  	 0x00a8  	 0x00ca  	 0x00ca  	 0x00ca 
+ 0x00ca  	 0x00ca  	 0x00e9  	 0x00e9  	 0x00e9  	 0x00f2  	 0x00f2 
+ 0x0137 
+ NtSetLowEventPair <javascript:showPrototypeDiv('NtSetLowEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetLowEventPair(
+	IN HANDLE2 EventPairHandle
+	);
+
+	 0x00a9  	 0x00a9  	 0x00a9  	 0x00a9  	 0x00cb  	 0x00cb  	 0x00cb 
+ 0x00cb  	 0x00cb  	 0x00ea  	 0x00ea  	 0x00ea  	 0x00f3  	 0x00f3 
+ 0x0138 
+ NtSetLowWaitHighEventPair
+<javascript:showPrototypeDiv('NtSetLowWaitHighEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetLowWaitHighEventPair(
+	IN HANDLE2 EventPairHandle
+	);
+
+	 0x00aa  	 0x00aa  	 0x00aa  	 0x00aa  	 0x00cc  	 0x00cc  	 0x00cc 
+ 0x00cc  	 0x00cc  	 0x00eb  	 0x00eb  	 0x00eb  	 0x00f4  	 0x00f4 
+ 0x0139 
+ NtSetLowWaitHighThread
+<javascript:showPrototypeDiv('NtSetLowWaitHighThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetLowWaitHighThread(
+	VOID
+	);
+
+	 0x00ab  	 0x00ab  	 0x00ab  	 0x00ab  	    	    	    	    	   
+    	    	    	    	    	   
+ NtSetQuotaInformationFile
+<javascript:showPrototypeDiv('NtSetQuotaInformationFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetQuotaInformationFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PFILE_USER_QUOTA_INFORMATION Buffer,
+	IN ULONG BufferLength
+	);
+
+	    	    	    	    	 0x00cd  	 0x00cd  	 0x00cd  	 0x00cd  	 0x00cd 
+ 0x00ec  	 0x00ec  	 0x00ec  	 0x00f5  	 0x00f5  	 0x013a 
+ NtSetSecurityObject <javascript:showPrototypeDiv('NtSetSecurityObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetSecurityObject(
+	IN HANDLE2 Handle,
+	IN SECURITY_INFORMATION SecurityInformation,
+	IN PSECURITY_DESCRIPTOR SecurityDescriptor
+	);
+
+	 0x00ac  	 0x00ac  	 0x00ac  	 0x00ac  	 0x00ce  	 0x00ce  	 0x00ce 
+ 0x00ce  	 0x00ce  	 0x00ed  	 0x00ed  	 0x00ed  	 0x00f6  	 0x00f6 
+ 0x013b 
+ NtSetSystemEnvironmentValue
+<javascript:showPrototypeDiv('NtSetSystemEnvironmentValue')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetSystemEnvironmentValue(
+	IN PUNICODE_STRING Name,
+	IN PUNICODE_STRING Value
+	);
+
+	 0x00ad  	 0x00ad  	 0x00ad  	 0x00ad  	 0x00cf  	 0x00cf  	 0x00cf 
+ 0x00cf  	 0x00cf  	 0x00ee  	 0x00ee  	 0x00ee  	 0x00f7  	 0x00f7 
+ 0x013c 
+ NtSetSystemEnvironmentValueEx
+<javascript:showPrototypeDiv('NtSetSystemEnvironmentValueEx')>  	   
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetSystemEnvironmentValueEx(
+	IN PUNICODE_STRING Name,
+	IN PUNICODE_STRING Value
+	IN ULONG Unknown1,
+	IN ULONG Unknown2,
+	IN ULONG Unknown3,
+	);
+
+
+    	    	    	    	    	    	    	    	 0x00ef  	 0x00ef  	 0x00ef 
+ 0x00f8  	 0x00f8  	 0x013d 
+ NtSetSystemInformation
+<javascript:showPrototypeDiv('NtSetSystemInformation')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetSystemInformation(
+	IN SYSTEM_INFORMATION_CLASS SystemInformationClass,
+	INOUT PVOID2 SystemInformation,
+	IN ULONG SystemInformationLength
+	);
+
+	 0x00ae  	 0x00ae  	 0x00ae  	 0x00ae  	 0x00d0  	 0x00d0  	 0x00d0 
+ 0x00d0  	 0x00d0  	 0x00f0  	 0x00f0  	 0x00f0  	 0x00f9  	 0x00f9 
+ 0x013e 
+ NtSetSystemPowerState
+<javascript:showPrototypeDiv('NtSetSystemPowerState')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetSystemPowerState(
+	IN POWER_ACTION SystemAction,
+	IN SYSTEM_POWER_STATE MinSystemState,
+	IN ULONG Flags
+	);
+
+	 0x00af  	 0x00af  	 0x00af  	 0x00af  	 0x00d1  	 0x00d1  	 0x00d1 
+ 0x00d1  	 0x00d1  	 0x00f1  	 0x00f1  	 0x00f1  	 0x00fa  	 0x00fa 
+ 0x013f 
+ NtSetSystemTime <javascript:showPrototypeDiv('NtSetSystemTime')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetSystemTime(
+	IN PLARGE_INTEGER2 NewTime,
+	OUT PLARGE_INTEGER2 OldTime OPTIONAL
+	);
+
+	 0x00b0  	 0x00b0  	 0x00b0  	 0x00b0  	 0x00d2  	 0x00d2  	 0x00d2 
+ 0x00d2  	 0x00d2  	 0x00f2  	 0x00f2  	 0x00f2  	 0x00fb  	 0x00fb 
+ 0x0140 
+ NtSetThreadExecutionState
+<javascript:showPrototypeDiv('NtSetThreadExecutionState')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetThreadExecutionState(
+	IN EXECUTION_STATE ExecutionState,
+	OUT PEXECUTION_STATE PreviousExecutionState
+	);
+
+	    	    	    	    	 0x00d3  	 0x00d3  	 0x00d3  	 0x00d3  	 0x00d3 
+ 0x00f3  	 0x00f3  	 0x00f3  	 0x00fc  	 0x00fc  	 0x0141 
+ NtSetTimer <javascript:showPrototypeDiv('NtSetTimer')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetTimer(
+	IN HANDLE2 TimerHandle,
+	IN PLARGE_INTEGER2 DueTime,
+	IN PTIMER_APC_ROUTINE TimerApcRoutine OPTIONAL,
+	IN ULONG TimerContext,
+	IN BOOLEAN Resume,
+	IN LONG Period,
+	OUT PBOOLEAN PreviousState OPTIONAL
+	);
+
+	 0x00b1  	 0x00b1  	 0x00b1  	 0x00b1  	 0x00d4  	 0x00d4  	 0x00d4 
+ 0x00d4  	 0x00d4  	 0x00f4  	 0x00f4  	 0x00f4  	 0x00fd  	 0x00fd 
+ 0x0142 
+ NtSetTimerResolution
+<javascript:showPrototypeDiv('NtSetTimerResolution')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetTimerResolution(
+	IN ULONG RequestedResolution,
+	IN BOOLEAN Set,
+	OUT PULONG ActualResolution
+	);
+
+	 0x00b2  	 0x00b2  	 0x00b2  	 0x00b2  	 0x00d5  	 0x00d5  	 0x00d5 
+ 0x00d5  	 0x00d5  	 0x00f5  	 0x00f5  	 0x00f5  	 0x00fe  	 0x00fe 
+ 0x0143 
+ NtSetUuidSeed <javascript:showPrototypeDiv('NtSetUuidSeed')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetUuidSeed(
+	IN PUCHAR UuidSeed
+	);
+
+	    	    	    	    	 0x00d6  	 0x00d6  	 0x00d6  	 0x00d6  	 0x00d6 
+ 0x00f6  	 0x00f6  	 0x00f6  	 0x00ff  	 0x00ff  	 0x0144 
+ NtSetValueKey <javascript:showPrototypeDiv('NtSetValueKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetValueKey(
+	IN HANDLE2 KeyHandle,
+	IN PUNICODE_STRING ValueName,
+	IN ULONG TitleIndex,
+	IN ULONG Type,
+	IN PVOID2 Data,
+	IN ULONG DataSize
+	);
+
+	 0x00b3  	 0x00b3  	 0x00b3  	 0x00b3  	 0x00d7  	 0x00d7  	 0x00d7 
+ 0x00d7  	 0x00d7  	 0x00f7  	 0x00f7  	 0x00f7  	 0x0100  	 0x0100 
+ 0x0145 
+ NtSetVolumeInformationFile
+<javascript:showPrototypeDiv('NtSetVolumeInformationFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSetVolumeInformationFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PVOID2 Buffer,
+	IN ULONG BufferLength,
+	IN FS_INFORMATION_CLASS VolumeInformationClass
+	);
+
+	 0x00b4  	 0x00b4  	 0x00b4  	 0x00b4  	 0x00d8  	 0x00d8  	 0x00d8 
+ 0x00d8  	 0x00d8  	 0x00f8  	 0x00f8  	 0x00f8  	 0x0101  	 0x0101 
+ 0x0146 
+ NtSetWinStationInformation
+<javascript:showPrototypeDiv('NtSetWinStationInformation')>  	   
+ 0x00d6  	    	    	    	    	    	    	    	    	    	    	    	    	   
+ NtShutdownSystem <javascript:showPrototypeDiv('NtShutdownSystem')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtShutdownSystem(
+	IN SHUTDOWN_ACTION Action
+	);
+
+	 0x00b5  	 0x00b5  	 0x00b5  	 0x00b5  	 0x00d9  	 0x00d9  	 0x00d9 
+ 0x00d9  	 0x00d9  	 0x00f9  	 0x00f9  	 0x00f9  	 0x0102  	 0x0102 
+ 0x0147 
+ NtShutdownWorkerFactory
+<javascript:showPrototypeDiv('NtShutdownWorkerFactory')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0180 
+ NtSignalAndWaitForSingleObject
+<javascript:showPrototypeDiv('NtSignalAndWaitForSingleObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSignalAndWaitForSingleObject(
+	IN HANDLE2 HandleToSignal,
+	IN HANDLE2 HandleToWait,
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL
+	);
+
+	 0x00b6  	 0x00b6  	 0x00b6  	 0x00b6  	 0x00da  	 0x00da  	 0x00da 
+ 0x00da  	 0x00da  	 0x00fa  	 0x00fa  	 0x00fa  	 0x0103  	 0x0103 
+ 0x0148 
+ NtSinglePhaseReject
+<javascript:showPrototypeDiv('NtSinglePhaseReject')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x005e 
+ NtStartProfile <javascript:showPrototypeDiv('NtStartProfile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtStartProfile(
+	IN HANDLE2 ProfileHandle
+	);
+
+	 0x00b7  	 0x00b7  	 0x00b7  	 0x00b7  	 0x00db  	 0x00db  	 0x00db 
+ 0x00db  	 0x00db  	 0x00fb  	 0x00fb  	 0x00fb  	 0x0104  	 0x0104 
+ 0x0149 
+ NtStartTm <javascript:showPrototypeDiv('NtStartTm')>  	    	   
+    	    	    	    	    	    	    	    	    	    	    	    	 0x0071 
+ NtStopProfile <javascript:showPrototypeDiv('NtStopProfile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtStopProfile(
+	IN HANDLE2 ProfileHandle
+	);
+
+	 0x00b8  	 0x00b8  	 0x00b8  	 0x00b8  	 0x00dc  	 0x00dc  	 0x00dc 
+ 0x00dc  	 0x00dc  	 0x00fc  	 0x00fc  	 0x00fc  	 0x0105  	 0x0105 
+ 0x014a 
+ NtSuspendProcess <javascript:showPrototypeDiv('NtSuspendProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSuspendProcess(
+	IN HANDLE2 Process
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x00fd  	 0x00fd 
+ 0x00fd  	 0x0106  	 0x0106  	 0x014b 
+ NtSuspendThread <javascript:showPrototypeDiv('NtSuspendThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSuspendThread(
+	IN HANDLE2 ThreadHandle,
+	OUT PULONG PreviousSuspendCount OPTIONAL
+	);
+
+	 0x00b9  	 0x00b9  	 0x00b9  	 0x00b9  	 0x00dd  	 0x00dd  	 0x00dd 
+ 0x00dd  	 0x00dd  	 0x00fe  	 0x00fe  	 0x00fe  	 0x0107  	 0x0107 
+ 0x014c 
+ NtSystemDebugControl
+<javascript:showPrototypeDiv('NtSystemDebugControl')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtSystemDebugControl(
+	IN DEBUG_CONTROL_CODE ControlCode,
+	IN PVOID2 InputBuffer OPTIONAL,
+	IN ULONG InputBufferLength,
+	OUT PVOID2 OutputBuffer OPTIONAL,
+	IN ULONG OutputBufferLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x00ba  	 0x00ba  	 0x00ba  	 0x00ba  	 0x00de  	 0x00de  	 0x00de 
+ 0x00de  	 0x00de  	 0x00ff  	 0x00ff  	 0x00ff  	 0x0108  	 0x0108 
+ 0x014d 
+ NtTerminateJobObject
+<javascript:showPrototypeDiv('NtTerminateJobObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtTerminateJobObject(
+	IN HANDLE2 JobHandle,
+	IN NTSTATUS ExitStatus
+	);
+
+	    	    	    	    	 0x00df  	 0x00df  	 0x00df  	 0x00df  	 0x00df 
+ 0x0100  	 0x0100  	 0x0100  	 0x0109  	 0x0109  	 0x014e 
+ NtTerminateProcess <javascript:showPrototypeDiv('NtTerminateProcess')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtTerminateProcess(
+	IN HANDLE2 ProcessHandle OPTIONAL,
+	IN NTSTATUS ExitStatus
+	);
+
+	 0x00bb  	 0x00bb  	 0x00bb  	 0x00bb  	 0x00e0  	 0x00e0  	 0x00e0 
+ 0x00e0  	 0x00e0  	 0x0101  	 0x0101  	 0x0101  	 0x010a  	 0x010a 
+ 0x014f 
+ NtTerminateThread <javascript:showPrototypeDiv('NtTerminateThread')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtTerminateThread(
+	IN HANDLE2 ThreadHandle OPTIONAL,
+	IN NTSTATUS ExitStatus
+	);
+
+	 0x00bc  	 0x00bc  	 0x00bc  	 0x00bc  	 0x00e1  	 0x00e1  	 0x00e1 
+ 0x00e1  	 0x00e1  	 0x0102  	 0x0102  	 0x0102  	 0x010b  	 0x010b 
+ 0x0150 
+ NtTestAlert <javascript:showPrototypeDiv('NtTestAlert')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtTestAlert(
+	VOID
+	);
+
+	 0x00bd  	 0x00bd  	 0x00bd  	 0x00bd  	 0x00e2  	 0x00e2  	 0x00e2 
+ 0x00e2  	 0x00e2  	 0x0103  	 0x0103  	 0x0103  	 0x010c  	 0x010c 
+ 0x0151 
+ NtThawRegistry <javascript:showPrototypeDiv('NtThawRegistry')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0152 
+ NtThawTransactions
+<javascript:showPrototypeDiv('NtThawTransactions')>  	    	    	   
+    	    	    	    	    	    	    	    	    	    	    	 0x0153 
+ NtTraceControl <javascript:showPrototypeDiv('NtTraceControl')> 
+    	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0155 
+ NtTraceEvent <javascript:showPrototypeDiv('NtTraceEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtTraceEvent(
+   IN ULONG TraceHandle,
+   IN ULONG Flags,
+   IN ULONG TraceHeaderLength,
+   IN PEVENT_TRACE_HEADER TraceHeader
+   );
+
+	    	    	    	    	    	    	    	    	    	 0x0104  	 0x0104 
+ 0x0104  	 0x010d  	 0x010d  	 0x0154 
+ NtTranslateFilePath <javascript:showPrototypeDiv('NtTranslateFilePath')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtTranslateFilePath(
+   PFILE_PATH InputFilePath,
+   ULONG OutputType,
+   PFILE_PATH OutputFilePath,
+   ULONG OutputFilePathLength
+   );
+
+	    	    	    	    	    	    	    	    	    	 0x0105  	 0x0105 
+ 0x0105  	 0x010e  	 0x010e  	 0x0156 
+ NtUnloadDriver <javascript:showPrototypeDiv('NtUnloadDriver')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtUnloadDriver(
+	IN PUNICODE_STRING DriverServiceName
+	);
+
+	 0x00be  	 0x00be  	 0x00be  	 0x00be  	 0x00e3  	 0x00e3  	 0x00e3 
+ 0x00e3  	 0x00e3  	 0x0106  	 0x0106  	 0x0106  	 0x010f  	 0x010f 
+ 0x0157 
+ NtUnloadKey <javascript:showPrototypeDiv('NtUnloadKey')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtUnloadKey(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes
+	);
+
+	 0x00bf  	 0x00bf  	 0x00bf  	 0x00bf  	 0x00e4  	 0x00e4  	 0x00e4 
+ 0x00e4  	 0x00e4  	 0x0107  	 0x0107  	 0x0107  	 0x0110  	 0x0110 
+ 0x0158 
+ NtUnloadKey2 <javascript:showPrototypeDiv('NtUnloadKey2')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtUnloadKey2(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	IN BOOLEAN ForceUnload
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	 0x0111 
+ 0x0111  	 0x0159 
+ NtUnloadKeyEx <javascript:showPrototypeDiv('NtUnloadKeyEx')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtUnloadKeyEx(
+	IN POBJECT_ATTRIBUTES2 KeyObjectAttributes,
+	IN HANDLE2 EventHandle OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x0108  	 0x0108 
+ 0x0108  	 0x0112  	 0x0112  	 0x015a 
+ NtUnlockFile <javascript:showPrototypeDiv('NtUnlockFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtUnlockFile(
+	IN HANDLE2 FileHandle,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PULARGE_INTEGER2 LockOffset,
+	IN PULARGE_INTEGER2 LockLength,
+	IN ULONG Key
+	);
+
+	 0x00c0  	 0x00c0  	 0x00c0  	 0x00c0  	 0x00e5  	 0x00e5  	 0x00e5 
+ 0x00e5  	 0x00e5  	 0x0109  	 0x0109  	 0x0109  	 0x0113  	 0x0113 
+ 0x015b 
+ NtUnlockVirtualMemory
+<javascript:showPrototypeDiv('NtUnlockVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtUnlockVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	INOUT PULONG BaseAddress,
+	INOUT PULONG LockSize,
+	IN ULONG LockType
+	);
+
+	 0x00c1  	 0x00c1  	 0x00c1  	 0x00c1  	 0x00e6  	 0x00e6  	 0x00e6 
+ 0x00e6  	 0x00e6  	 0x010a  	 0x010a  	 0x010a  	 0x0114  	 0x0114 
+ 0x015c 
+ NtUnmapViewOfSection
+<javascript:showPrototypeDiv('NtUnmapViewOfSection')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtUnmapViewOfSection(
+	IN HANDLE2 ProcessHandle,
+	IN ULONG BaseAddress
+	);
+
+	 0x00c2  	 0x00c2  	 0x00c2  	 0x00c2  	 0x00e7  	 0x00e7  	 0x00e7 
+ 0x00e7  	 0x00e7  	 0x010b  	 0x010b  	 0x010b  	 0x0115  	 0x0115 
+ 0x015d 
+ NtVdmControl <javascript:showPrototypeDiv('NtVdmControl')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtVdmControl(
+	IN VDMSERVICECLASS Service,
+	INOUT ULONG ServiceData
+	);
+
+	 0x00c3  	 0x00c3  	 0x00c3  	 0x00c3  	 0x00e8  	 0x00e8  	 0x00e8 
+ 0x00e8  	 0x00e8  	 0x010c  	 0x010c  	 0x010c  	 0x0116  	 0x0116 
+ 0x015e 
+ NtW32Call <javascript:showPrototypeDiv('NtW32Call')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtW32Call(
+	IN ULONG RoutineIndex,
+	IN PVOID2 Argument,
+	IN ULONG ArgumentLength,
+	OUT PPVOID2 Result OPTIONAL,
+	OUT PULONG ResultLength OPTIONAL
+	);
+
+	 0x00cc  	    	    	    	    	    	    	    	    	    	    	   
+    	    	   
+ NtWaitForDebugEvent <javascript:showPrototypeDiv('NtWaitForDebugEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWaitForDebugEvent(
+	IN HANDLE2 DebugObject,
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL,
+	OUT PDBGUI_WAIT_STATE_CHANGE StateChange
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x010d  	 0x010d 
+ 0x010d  	 0x0117  	 0x0117  	 0x015f 
+ NtWaitForKeyedEvent <javascript:showPrototypeDiv('NtWaitForKeyedEvent')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWaitForKeyedEvent(
+	IN HANDLE2 KeyedEventHandle,
+	IN ULONG Key,
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	 0x011a  	 0x011a 
+ 0x011a  	 0x0124  	 0x0124  	 0x016c 
+ NtWaitForMultipleObjects
+<javascript:showPrototypeDiv('NtWaitForMultipleObjects')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWaitForMultipleObjects(
+	IN ULONG HandleCount,
+	IN PHANDLE2 Handles,
+	IN WAIT_TYPE WaitType,
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL
+	);
+
+	 0x00c4  	 0x00c4  	 0x00c4  	 0x00c4  	 0x00e9  	 0x00e9  	 0x00e9 
+ 0x00e9  	 0x00e9  	 0x010e  	 0x010e  	 0x010e  	 0x0118  	 0x0118 
+ 0x0160 
+ NtWaitForMultipleObjects32
+<javascript:showPrototypeDiv('NtWaitForMultipleObjects32')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWaitForMultipleObjects32(
+	IN ULONG HandleCount,
+	IN PHANDLE2 Handles,
+	IN WAIT_TYPE WaitType,
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL
+	);
+
+	    	    	    	    	    	    	    	    	    	    	    	    	   
+ 0x0127  	 0x016f 
+ NtWaitForSingleObject
+<javascript:showPrototypeDiv('NtWaitForSingleObject')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWaitForSingleObject(
+	IN HANDLE2 Handle,
+	IN BOOLEAN Alertable,
+	IN PLARGE_INTEGER2 Timeout OPTIONAL
+	);
+
+	 0x00c5  	 0x00c5  	 0x00c5  	 0x00c5  	 0x00ea  	 0x00ea  	 0x00ea 
+ 0x00ea  	 0x00ea  	 0x010f  	 0x010f  	 0x010f  	 0x0119  	 0x0119 
+ 0x0161 
+ NtWaitForWorkViaWorkerFactory
+<javascript:showPrototypeDiv('NtWaitForWorkViaWorkerFactory')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x017c 
+ NtWaitHighEventPair <javascript:showPrototypeDiv('NtWaitHighEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWaitHighEventPair(
+	IN HANDLE2 EventPairHandle
+	);
+
+	 0x00c6  	 0x00c6  	 0x00c6  	 0x00c6  	 0x00eb  	 0x00eb  	 0x00eb 
+ 0x00eb  	 0x00eb  	 0x0110  	 0x0110  	 0x0110  	 0x011a  	 0x011a 
+ 0x0162 
+ NtWaitLowEventPair <javascript:showPrototypeDiv('NtWaitLowEventPair')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWaitLowEventPair(
+	IN HANDLE2 EventPairHandle
+	);
+
+	 0x00c7  	 0x00c7  	 0x00c7  	 0x00c7  	 0x00ec  	 0x00ec  	 0x00ec 
+ 0x00ec  	 0x00ec  	 0x0111  	 0x0111  	 0x0111  	 0x011b  	 0x011b 
+ 0x0163 
+ NtWorkerFactoryWorkerReady
+<javascript:showPrototypeDiv('NtWorkerFactoryWorkerReady')>  	   
+    	    	    	    	    	    	    	    	    	    	    	    	    	 0x017f 
+ NtWriteErrorLogEntry
+<javascript:showPrototypeDiv('NtWriteErrorLogEntry')>  	   
+ 0x00d7  	    	    	    	    	    	    	    	    	    	    	    	    	   
+ NtWriteFile <javascript:showPrototypeDiv('NtWriteFile')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWriteFile(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PVOID2 Buffer,
+	IN ULONG Length,
+	IN PLARGE_INTEGER2 ByteOffset OPTIONAL,
+	IN PULONG Key OPTIONAL
+	);
+
+	 0x00c8  	 0x00c8  	 0x00c8  	 0x00c8  	 0x00ed  	 0x00ed  	 0x00ed 
+ 0x00ed  	 0x00ed  	 0x0112  	 0x0112  	 0x0112  	 0x011c  	 0x011c 
+ 0x0164 
+ NtWriteFileGather <javascript:showPrototypeDiv('NtWriteFileGather')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWriteFileGather(
+	IN HANDLE2 FileHandle,
+	IN HANDLE2 Event OPTIONAL,
+	IN PIO_APC_ROUTINE ApcRoutine OPTIONAL,
+	IN ULONG ApcContext OPTIONAL,
+	OUT PIO_STATUS_BLOCK IoStatusBlock,
+	IN PFILE_SEGMENT_ELEMENT Buffer,
+	IN ULONG Length,
+	IN PLARGE_INTEGER2 ByteOffset OPTIONAL,
+	IN PULONG Key OPTIONAL
+	);
+
+	 0x00c9  	 0x00c9  	 0x00c9  	 0x00c9  	 0x00ee  	 0x00ee  	 0x00ee 
+ 0x00ee  	 0x00ee  	 0x0113  	 0x0113  	 0x0113  	 0x011d  	 0x011d 
+ 0x0165 
+ NtWriteRequestData <javascript:showPrototypeDiv('NtWriteRequestData')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWriteRequestData(
+	IN HANDLE2 PortHandle,
+	IN PPORT_MESSAGE Message,
+	IN ULONG Index,
+	IN PVOID2 Buffer,
+	IN ULONG BufferLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x00ca  	 0x00ca  	 0x00ca  	 0x00ca  	 0x00ef  	 0x00ef  	 0x00ef 
+ 0x00ef  	 0x00ef  	 0x0114  	 0x0114  	 0x0114  	 0x011e  	 0x011e 
+ 0x0166 
+ NtWriteVirtualMemory
+<javascript:showPrototypeDiv('NtWriteVirtualMemory')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtWriteVirtualMemory(
+	IN HANDLE2 ProcessHandle,
+	IN ULONG BaseAddress,
+	IN PVOID2 Buffer,
+	IN ULONG BufferLength,
+	OUT PULONG ReturnLength OPTIONAL
+	);
+
+	 0x00cb  	 0x00cb  	 0x00cb  	 0x00cb  	 0x00f0  	 0x00f0  	 0x00f0 
+ 0x00f0  	 0x00f0  	 0x0115  	 0x0115  	 0x0115  	 0x011f  	 0x011f 
+ 0x0167 
+ NtYieldExecution <javascript:showPrototypeDiv('NtYieldExecution')> 
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+NtYieldExecution(
+	VOID
+	);
+
+	 0x00d3  	 0x00d2  	 0x00d2  	 0x00d2  	 0x00f7  	 0x00f7  	 0x00f7 
+ 0x00f7  	 0x00f7  	 0x0116  	 0x0116  	 0x0116  	 0x0120  	 0x0120 
+ 0x0168 
+

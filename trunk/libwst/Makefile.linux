@@ -1,0 +1,6 @@
+#-*-makefile-*-
+
+include Makefile.common
+
+CFLAGS = -I/usr/include/wine/windows/
+RM = rm -f

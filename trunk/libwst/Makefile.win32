@@ -1,0 +1,6 @@
+#-*-makefile-*-
+
+include Makefile.common
+
+CFLAGS = -DMINGW 
+RM = del

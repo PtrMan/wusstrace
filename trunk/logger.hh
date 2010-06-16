@@ -1,0 +1,47 @@
+// Copyright notice
+// ================
+//
+// Copyright (C) 2010
+//     Lorenzo Martignoni <martignlo@gmail.com>
+//     Roberto Paleari <roberto.paleari@gmail.com>
+//
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software
+// Foundation; either version 3 of the License, or (at your option) any later
+// version.  
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+// FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+// details.
+//
+// You should have received a copy of the GNU General Public License along with
+// this program; if not, write to the Free Software Foundation, Inc., 51
+// Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+
+#ifndef _XML_HH
+#define _XML_HH
+
+#include "syscall.hh"
+#include "serialize-xml.hh"
+#include "syscall_tracer.hh"
+
+// All member functions in Logger and descendants must be THREAD SAFE
+
+// XML Logging: logs into an XML document
+class XMLLogger : public SyscallTracer {
+private:
+  ofstream *dumpfs;
+  SERIALIZE_OARCHIVE *oarchive;
+public:
+  XMLLogger(uint32_t pid, char *dumpfile);
+  ~XMLLogger();
+
+  uint32_t preSyscall(uint32_t, SyscallNo, void *, Syscall **);
+  uint32_t postSyscall(uint32_t, Syscall *, uint32_t);
+
+  void log(Syscall *s);
+};
+
+#endif	// _XML_HH
