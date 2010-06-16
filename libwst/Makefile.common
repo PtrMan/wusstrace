@@ -1,0 +1,62 @@
+#-*-makefile-*-
+
+# CC=gcc
+# CXX=g++
+
+CFLAGS += -Wall -O3 -Wfatal-errors
+CFLAGS_DRIVER=-Wall
+LDFLAGS=-lboost_serialization -lboost_system \
+	-lboost_thread
+
+.PHONY: all clean clean-all
+
+SRCS =  syscall.cc \
+	syscall_tracer.cc \
+	tls.cc
+
+OBJS = syscall.o syscall_tracer.o tls.o
+
+all: libwst.a
+
+libwst.a: $(OBJS)
+	$(AR) rcs $@ $(OBJS)
+
+%.o: 
+	$(CXX) -c $(CFLAGS) -o $@ $<
+
+tags:
+	-etags *.cc *.hh
+
+clean:
+	-$(RM) $(OBJS)
+	-$(RM) TAGS
+
+clean-all: clean
+	-$(RM) -f $(OBJS)
+
+depend dep deps: $(SRCS)
+	@echo Generating deps for:
+	@echo $(SRCS) 
+	@sed "/^### autodeps/q" Makefile.common > Makefile.common.tmp
+	@$(CXX) $(CFLAGS) -MM $(SRCS) >> Makefile.common.tmp
+	@set -e; \
+	if cmp -s Makefile.common.tmp Makefile.common ; then \
+		echo Makefile.common unchanged; \
+		$(RM) Makefile.common.tmp; \
+	else \
+		echo Updating Makefile.common; \
+		cp -f Makefile.common.tmp Makefile.common; \
+		$(RM) Makefile.common.tmp; \
+	fi
+
+# ##################################
+# ########## Dependencies ##########
+# ##################################
+
+### autodeps 
+syscall.o: syscall.cc wstconfig.hh syscall.hh type_winxp.hh \
+  syscall_winxp.hh
+syscall_tracer.o: syscall_tracer.cc wstconfig.hh syscall_tracer.hh \
+  syscall.hh type_winxp.hh syscall_winxp.hh tls.hh
+tls.o: tls.cc syscall.hh wstconfig.hh type_winxp.hh syscall_winxp.hh \
+  tls.hh

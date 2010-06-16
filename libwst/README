@@ -1,0 +1,30 @@
+				    LIBWST
+				    ======
+
+Overview
+~~~~~~~~
+
+This library implements an interface to represent Microsoft Windows system
+calls and their arguments. A system call is represented through a Syscall
+object, and the arguments are SyscallArg objects. The library also offers the
+ability to serialise and deserialise a Syscall object, and its arguments, to
+(and from) a XML or BINARY stream.
+
+
+Limitations
+~~~~~~~~~~~
+
+The library currently supports only Microsoft Windows XP system calls. 
+
+
+Copyright
+~~~~~~~~~
+
+LIBWST is copyrighted (2010) by:
+
+* Lorenzo Martignoni <martignlo@gmail.com>
+* Roberto Paleari <roberto.paleari@gmail.com>
+
+It is licensed under GPLv3+ (GNU GPL version 3 or later
+<http://gnu.org/licenses/gpl.html>). For further information about the license
+please read the file COPYING included in the distribution.

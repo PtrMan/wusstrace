@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<!-- 
+    Copyright notice
+    ================
+
+    Copyright (C) 2010
+	Lorenzo Martignoni <martignlo@gmail.com>
+	Roberto Paleari <roberto.paleari@gmail.com>
+
+    This program is free software; you can redistribute it and/or modify it under
+    the terms of the GNU General Public License as published by the Free Software
+    Foundation; either version 3 of the License, or (at your option) any later
+    version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+    FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+    details.
+
+    You should have received a copy of the GNU General Public License along with
+    this program; if not, write to the Free Software Foundation, Inc., 51
+    Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="boost_serialization">
+    <xs:complexType>
+      <xs:sequence>   
+	<xs:element name="PID" type="xs:integer" />
+	<xs:element name="Filename" type="xs:string" />
+	<xs:element name="Environment" minOccurs="0" maxOccurs="1">
+	  <xs:complexType>
+	    <xs:sequence>
+	      <xs:element name="Variable" type="TypeEnvironmentVariable" minOccurs="0" maxOccurs="unbounded" />
+	    </xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+	<xs:element name="Syscall" maxOccurs="unbounded">
+          <xs:complexType>
+	    <xs:sequence>
+	      <xs:element name="ID" type="xs:integer" />
+	      <xs:element name="Time" type="TypeTime" />
+	      <xs:element name="No" type="xs:integer" />
+	      <xs:element name="Name" type="xs:string" />
+	      <xs:element name="Dir" type="TypeDir" />
+	      <xs:element name="ThreadID" type="xs:integer" />
+	      <xs:element name="Arg" type="TypeArg" minOccurs="0" maxOccurs="unbounded" />
+	      <xs:element name="Retval" type="TypeArg" minOccurs="0" maxOccurs="1" />
+	    </xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+      </xs:sequence>
+      <xs:attribute name="signature" type="xs:string" use="required" />
+      <xs:attribute name="version" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="TypeEnvironmentVariable">
+    <xs:sequence>
+      <xs:element name="Name"  type="xs:string" />
+      <xs:element name="Value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="TypeDir">
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="[0-3]" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="TypeOpt">
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="[0-2]" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="TypeArg">
+    <xs:sequence>
+      <xs:element name="No" type="xs:integer" />
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="Dir" type="TypeDir" />
+      <xs:element name="Opt" type="TypeOpt" />
+      <xs:any minOccurs="1" maxOccurs="unbounded" processContents="skip" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TypeTime">
+    <xs:sequence>
+      <xs:element name="DWORD.LowPart" type="xs:integer" />
+      <xs:element name="DWORD.HighPart" type="xs:integer" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
