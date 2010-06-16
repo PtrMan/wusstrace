@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
     Copyright notice
     ================
@@ -21,15 +22,12 @@
     Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 -->
 
-
 <!-- 
-     to use, just add the following line as second line inside the XML syscall
+     To use, just add the following line as second line inside the XML syscall
      dump file
 
      <?xml-stylesheet type="text/xsl" href="wusstrace.xsl" ?> 
 -->
-
-<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method='html' version='1.0' encoding='UTF-8' indent='yes'/>
@@ -48,26 +46,27 @@
 	  </tr>
 	  <xsl:for-each select="boost_serialization/Syscall">
 	    <tr>
-              <td><xsl:value-of select="SyscallNo"/></td>
-              <td><xsl:value-of select="SyscallName"/></td>
-              <td><xsl:value-of select="SyscallDir"/></td>
+              <td><xsl:value-of select="ID"/></td>
+              <td><xsl:value-of select="Name"/></td>
+              <td><xsl:value-of select="Dir"/></td>
               <td><xsl:value-of select="ThreadID"/></td>
 	      <td>
 		<table>
-		  <xsl:for-each select="SyscallArg">
+		  <xsl:for-each select="Arg">
 		    <tr>
-		      <td><xsl:value-of select="ArgNumber"/></td>
+		      <td><xsl:value-of select="No"/></td>
+		      <td><xsl:value-of select="Name"/></td>
 		      <xsl:choose>
-			<xsl:when test="ArgDirection = 0">
+			<xsl:when test="Dir = 0">
 			  <td bgcolor="#c3c3c3">NONE</td>
 			</xsl:when>
-			<xsl:when test="ArgDirection = 1">
+			<xsl:when test="Dir = 1">
 			  <td bgcolor="#28e33a">IN</td>
 			</xsl:when>
-			<xsl:when test="ArgDirection = 2">
+			<xsl:when test="Dir = 2">
 			  <td bgcolor="#2880e3">OUT</td>
 			</xsl:when>
-			<xsl:when test="ArgDirection = 3">
+			<xsl:when test="Dir = 3">
 			  <td bgcolor="#ffc871">INOUT</td>
 			</xsl:when>
 			<xsl:otherwise>
@@ -75,13 +74,13 @@
 			</xsl:otherwise>
 		      </xsl:choose>
 		      <xsl:choose>
-			<xsl:when test="ArgOptional = 0">
+			<xsl:when test="Opt = 0">
 			  <td>NONE</td>
 			</xsl:when>
-			<xsl:when test="ArgOptional = 1">
+			<xsl:when test="Opt = 1">
 			  <td>OPTIONAL</td>
 			</xsl:when>
-			<xsl:when test="ArgOptional = 2">
+			<xsl:when test="Opt = 2">
 			  <td>MANDATORY</td>
 			</xsl:when>
 			<xsl:otherwise>
