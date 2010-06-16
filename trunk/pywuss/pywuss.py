@@ -361,3 +361,7 @@ if __name__ == "__main__":
 
         filesdata = parse_files(filenames)
         executionsdata.append(filesdata)
+
+    for e in executionsdata:
+        for f, v in e.iteritems():
+            print v
