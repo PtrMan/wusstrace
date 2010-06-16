@@ -20,7 +20,7 @@ serialization library. You can download a version of GCC that already contains t
 To trace the execution of a program you just have to run WUSSTrace and specify
 on the command line the name of the program to trace. By default WUSSTrace does
 not dump on disk the system calls intercepted. To do that you have to add the
-options "-d PATH/PREFIX" to the command line to specify where to store the
+options `-d PATH/PREFIX` to the command line to specify where to store the
 traces. To find you other valid command line options run WUSSTrace with no
 arguments.
 
@@ -30,9 +30,9 @@ Python interface, called PyWUSS, that facilitates the analysis of XML traces.
 = Limitations =
 
 At the moment WUSSTrace only intercepts system calls invoked using
-KiIntSystemCall. Support for hooking KiFastSystemCall has not been implemented
+`KiIntSystemCall`. Support for hooking `KiFastSystemCall` has not been implemented
 yet only because of time constraint. Consequently, if your machine supports
-"sysenter" WUSSTrace will not work. To workaround this limitation you can
+`sysenter` WUSSTrace will not work. To workaround this limitation you can
 perform your analyses from within VirtualBox, which virtualizes a IA-32 CPU
 without the support for "sysenter". 
 
@@ -43,7 +43,7 @@ WUSSTrace has been tested only on Microsoft Windows XP SP2.
 WUSSTrace is copyrighted (2010) by Lorenzo Martignoni and Roberto Paleari.
 
 It is licensed under GPLv3+ (GNU GPL version 3 or later
-<http://gnu.org/licenses/gpl.html>). For further information about the license
+<[http://gnu.org/licenses/gpl.html]>). For further information about the license
 please read the file COPYING included in the distribution.
 
 = Contact =
