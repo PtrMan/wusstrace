@@ -59,7 +59,7 @@ using namespace std;
 
 // This is the structure that holds command line options, that are
 // passed from multienv-cli.cc to injdll.cc
-typedef struct Options {
+typedef struct {
   BOOL bGUI;
   BOOL bDump;
   BOOL bFastSyscall;
@@ -76,7 +76,7 @@ typedef struct Options {
   char sLockFile[MAX_PATH];
   char sDllFile[MAX_PATH];
   time_t iTimeout;
-};
+} Options;
 
 #include <windows.h>
 #include <string>
