@@ -39,7 +39,7 @@ namespace boost {
   namespace serialization {
 
     struct blob {
-      /* const */ void * const m_t;
+      const void * const m_t;
       const std::size_t m_size;
 
       template<class Archive>
@@ -86,7 +86,7 @@ namespace boost {
 
       BOOST_SERIALIZATION_SPLIT_MEMBER()
 
-      blob(/* const */ void * const t, std::size_t size) :
+      blob(const void * const t, std::size_t size) :
       m_t(t),
         m_size(size)
       {}
@@ -103,7 +103,7 @@ namespace boost {
     const
 #endif
     blob 
-    make_blob(/* const */ void * t, std::size_t size){
+    make_blob(const void * t, std::size_t size){
       return blob(t, size);
     }
 
