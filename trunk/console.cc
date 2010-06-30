@@ -23,6 +23,7 @@
 #include <conio.h>
 #include <stdarg.h>
 #include <windows.h>
+#include <stdio.h>
 // #include <boost/thread/mutex.hpp>
 
 #include "console.hh"
