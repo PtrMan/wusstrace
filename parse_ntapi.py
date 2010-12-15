@@ -1021,15 +1021,15 @@ while l:
             args = []
             l = sys.stdin.readline()
             while True:
-                # print l
+                # print "++%s++" % l
                 l = l.strip("\n")
                 l = l.strip("\t")
-                l = l.strip(",")
                 l = l.strip("const ")
                 l = l.replace("   ", "")
                 l = l.replace("  ", "")
                 l = l.replace(");", "")
-                #print "--%s--" % l
+                l = l.replace(",", "")
+                # print "--%s--" % l
 
                 if not l:
                     break;
@@ -1101,7 +1101,7 @@ print r
 for j in range(0, 0x11c):
     if j in sl2:
         s = ss[sl2[j]]
-        r = "MagicSyscall(%s, 0x%x, %s, %d" % (s[0], j, s[2], len(s[1]))
+        r = "MagicSyscall(%s, 0x%x, %s_WST, %d" % (s[0], j, s[2], len(s[1]))
         ty.add(s[2])
         for a in s[1]:
             while "*" in a[1]:
@@ -1116,7 +1116,12 @@ for j in range(0, 0x11c):
             # assert (a[3] == "MANDATORY" or a[3] == "OPTIONAL"), a
             assert (a[0] != "" and a[1] != "" and a[2] != "" and a[3] != ""), a
 
-            r += ", %s, %s_WST, %s, %s" % (a[0], a[1], a[2], a[3])
+            ttt = a[1]
+            if ttt == "PVOID":
+                ttt = "PVOID_WST_SIZEAFTER"
+            else:
+                ttt = "%s_WST" % ttt
+            r += ", %s, %s, %s, %s" % (a[0], ttt, a[2], a[3])
             ty.add(a[1])
         for i in range(len(s[1]), max):
             r += ", %s, %s, %s, %s" % ("NONE", "NONE", "NONE", "NONE")
@@ -1146,8 +1151,16 @@ print """
 for a in ty:
     print "MagicSyscallArgType(%s_WST)" % (a)
 
+print "MagicSyscallArgType(PVOID_WST_SIZEAFTER)"
+print "MagicSyscallArgType(PVOID_WST_SIZEBEFORE)"
 print """
 #undef MagicSyscallArgType
+"""
+
+print """
+#ifndef isGUISyscall
+#define isGUISyscall(x) (x >= 0x1000)
+#endif
 """
 
 sys.exit(0)
