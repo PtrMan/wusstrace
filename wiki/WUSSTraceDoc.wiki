@@ -33,8 +33,7 @@ At the moment WUSSTrace only intercepts system calls invoked using
 `KiIntSystemCall`. Support for hooking `KiFastSystemCall` has not been implemented
 yet only because of time constraint. Consequently, if your machine supports
 `sysenter` WUSSTrace will not work. To workaround this limitation you can
-perform your analyses from within VirtualBox, which virtualizes a IA-32 CPU
-without the support for "sysenter". 
+force applications to use `KiIntSystemCall` instead of `KiFastSystemCall`. Go to `HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel`, create an entry named `FastSystemCallDisable` with a DWORD value of 1, and reboot.
 
 WUSSTrace has been tested only on Microsoft Windows XP SP2.
 
