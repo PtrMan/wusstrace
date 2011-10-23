@@ -1,7 +1,7 @@
 // Copyright notice
 // ================
 //
-// Copyright (C) 2010
+// Copyright (C) 2011
 //     Lorenzo Martignoni <martignlo@gmail.com>
 //     Roberto Paleari <roberto.paleari@gmail.com>
 //
@@ -56,36 +56,22 @@ extern "C" {
 Options options;
 SyscallTracer *tracer = NULL;
 
+extern "C" uint32_t syscall_hook();
 extern bool syscall_hooking;
 extern set<DWORD> traced_threads;
 extern bitset syscall_hooked[];
 // extern ThreadLocalStorage tls;
 
 BOOL hook(FARPROC funcaddr, FARPROC hookaddr) {
-  // unsigned char newcode[] = "\xe9\x00\x00\x00\x00";
-  unsigned char newcode[] = "\x32\xD2\x74\x06\x90\x90\x90\x90\x90\xC3\xE9\x00\x00\x00\x00";
+  unsigned char newcode[] = "\xe9\x00\x00\x00\x00";
+  // unsigned char newcode[] = "\x32\xD2\x74\x06\x90\x90\x90\x90\x90\xC3\xE9\x00\x00\x00\x00";
   unsigned char oldcode[sizeof(newcode)];
   DWORD dwOldProtect, dwDelta;
 
-  // Setup hooking code
-
-  // edx is killed by both KiFastSystemCall and KiIntSystemCall
-  //
-  // the forward jump is used in case we have no room between KiFastSystemCall
-  // and KiFastSystemCallRet
-  //
-  //     0:32 d2                xor    %dl,%dl
-  //     2:74 06                je     0xa
-  //     4:90                   nop    
-  //     5:90                   nop    
-  //     6:90                   nop    
-  //     7:90                   nop    
-  //     8:90                   nop    
-  //     9:c3                   ret    
-  //     a:e9 00 00 00 00       jmp    0xf
-
+  // Setup hooking code. %edx is killed by both KiFastSystemCall and
+  // KiIntSystemCall
   memcpy(oldcode, (char*) hookaddr, sizeof(oldcode));
-  dwDelta = (((unsigned long) hookaddr) - (((unsigned long) funcaddr) + 15)) % 0xffffffff;
+  dwDelta = ((unsigned long) hookaddr - (unsigned long) funcaddr - sizeof(newcode) + 1) % 0xffffffff;
   *((unsigned long*) (&newcode[sizeof(newcode) - 5])) = dwDelta;
   
   // Unprotect stub page
@@ -95,18 +81,6 @@ BOOL hook(FARPROC funcaddr, FARPROC hookaddr) {
   }
 
   debug("* %.8x; syscall_wrapper(): %.8x; delta: %.8x;", funcaddr, hookaddr, dwDelta);
-
-  // fprintf(stderr, " ");		// XXX If we remove this line, regedit.exe crashes
-#if 0
-  fprintf(stderr, "* old code:");
-  for (size_t i = 0; i < sizeof(newcode) - 1; i++)
-    fprintf(stderr, " %.2x", oldcode[i]);
-  fprintf(stderr, "\n");
-  fprintf(stderr, "* new code:");
-  for (size_t i = 0; i < sizeof(newcode) - 1; i++)
-    fprintf(stderr, " %.2x", newcode[i]);
-  fprintf(stderr, "\n");
-#endif
 
   // Hook
   memcpy((char *) funcaddr, newcode, strlen((char *) newcode));

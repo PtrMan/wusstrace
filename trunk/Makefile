@@ -8,7 +8,7 @@ LDFLAGS=-lboost_serialization -lboost_system \
 
 .PHONY: all clean clean-all
 
-SRCS = hook.cc wusstrace.cc wusstrace-dll.cc hook.cc \
+SRCS = hook.cc wusstrace.cc wusstrace-dll.cc hook-asm.S \
 	common.cc logger.cc bitset.cc console.cc pending.cc 
 
 OBJS = $(SRCS:.cc=.o)
@@ -70,10 +70,11 @@ depend dep deps: $(SRCS)
 # ##################################
 
 wusstrace.exe: wusstrace.o common.o console.o
-wusstrace.dll: wusstrace-dll.o common.o hook.o logger.o \
+wusstrace.dll: wusstrace-dll.o common.o hook.o hook-asm.o logger.o \
 	bitset.o console.o pending.o libwst/libwst.a
 
 ### autodeps 
+hook-asm.o: hook-asm.S
 hook.o: hook.cc bitset.hh config.hh debug.hh hook.hh common.hh \
   libwst/type_winxp.hh libwst/syscall_tracer.hh libwst/syscall.hh \
   libwst/wstconfig.hh libwst/type_winxp.hh libwst/syscall_winxp.hh \
@@ -87,10 +88,6 @@ wusstrace-dll.o: wusstrace-dll.cc bitset.hh config.hh hook.hh common.hh \
   libwst/serialize_internal.hh libwst/syscall.hh libwst/syscall_tracer.hh \
   libwst/tls.hh libwst/blob.hh libwst/syscall_winxp_args.hh \
   libwst/syscall_tracer.hh
-hook.o: hook.cc bitset.hh config.hh debug.hh hook.hh common.hh \
-  libwst/type_winxp.hh libwst/syscall_tracer.hh libwst/syscall.hh \
-  libwst/wstconfig.hh libwst/type_winxp.hh libwst/syscall_winxp.hh \
-  libwst/tls.hh
 common.o: common.cc config.hh console.hh common.hh libwst/type_winxp.hh
 logger.o: logger.cc debug.hh config.hh common.hh libwst/type_winxp.hh \
   logger.hh libwst/syscall.hh libwst/wstconfig.hh libwst/type_winxp.hh \
