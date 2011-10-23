@@ -19,11 +19,36 @@
 // this program; if not, write to the Free Software Foundation, Inc., 51
 // Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-#ifndef __HOOK_HH__
-#define __HOOK_HH__
+.text
+.globl _syscall_hook
+.extern syscall_hook_internal 	
 
-// syscall_hook_internal() is decleared as 'extern "C"', because it is called
-// from hook-asm.S
-extern "C" uint32_t syscall_hook_internal(uint32_t orig_esp, uint32_t orig_eax, uint32_t retaddr, uint32_t tid);
+_syscall_hook:
+	movl %esp, %edx
+	
+	sub  $0x10, %esp
+	movl %edx, (%esp)     // Original %esp (pointer to arguments)
+	movl %eax, 0x4(%esp)  // Original %eax (syscall number)
 
-#endif	// __HOOK_H__
+	// Read original return address. %ebp could be NULL.
+	cmp  $0x0, %ebp
+	jne  read_retaddr
+	xor  %eax, %eax
+	jmp  save_retaddr
+read_retaddr:
+	movl 0x4(%ebp), %eax
+save_retaddr:
+	movl %eax, 0x8(%esp)
+
+	// Read current thread ID (TID)
+	movl %fs:(0x24), %eax
+	movl %eax, 0xc(%esp)
+
+	// The internal syscall handler will eventually call the original
+	// system call, and return the retval in %eax
+	call _syscall_hook_internal
+
+	// Deallocate function arguments
+	add $0x10, %esp
+	
+	ret

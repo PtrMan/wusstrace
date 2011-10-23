@@ -1,7 +1,7 @@
 // Copyright notice
 // ================
 //
-// Copyright (C) 2010
+// Copyright (C) 2011
 //     Lorenzo Martignoni <martignlo@gmail.com>
 //     Roberto Paleari <roberto.paleari@gmail.com>
 //
@@ -58,13 +58,15 @@ set<uint32_t> traced_threads;
 uint32_t prehook(uint32_t tid, SyscallNo sysno, void *args, Syscall **syscall);
 uint32_t posthook(uint32_t tid, Syscall *syscall, uint32_t retval);
 
-#define DO_INT_SYSCALL(eax, ret)		\
+#define DO_INT_SYSCALL(eax, esp, ret)		\
   asm __volatile__ ("movl %1, %%eax;"		\
-		    "lea 0xc(%%ebp), %%edx;"	\
+		    "movl %2, %%edx;"		\
+		    "add $0x8, %%edx;"		\
 		    "int $0x2e;"		\
 		    "movl %%eax, %0;"		\
 		    : "=r" (ret)		\
-		    : "m" (eax)			\
+		    : "m" (eax),		\
+		      "m" (esp)			\
 		    : "edx"			\
 		    )
 
@@ -93,27 +95,10 @@ uint32_t posthook(uint32_t tid, Syscall *syscall, uint32_t retval);
 		    : "eax", "ecx", "edx", "edi", "esi"	\
 		    )
 
-uint32_t syscall_hook() {
-  uint32_t orig_eax, eax;
-  uint32_t orig_esp;
-  uint32_t tid, retval, retaddr;
+uint32_t syscall_hook_internal(uint32_t orig_esp, uint32_t orig_eax, uint32_t retaddr, uint32_t tid) {
+  uint32_t retval;
   Syscall *syscall;
   bool bNoReturn, bIsHooked;
-
-  // Save system call number, original ESP and current thread ID
-  asm __volatile__ ("movl %%eax, %0;"
-		    "movl %%ebp, %1;"
-		    "push %%ebx;"
-		    "movl 0x4(%%ebp), %%ebx;"
-		    "movl %%ebx, %3;"
-		    "movl %%fs:(0x24), %%ebx;"
-		    "movl %%ebx, %2;"
-		    "pop %%ebx;"
-		    : "=m" (orig_eax), "=m" (orig_esp), "=m" (tid),	\
-		      "=m" (retaddr)
-		    );
-
-  eax = orig_eax;
 
   ATOMIC_WITH_RET(bIsHooked, !bitset_test_bit(syscall_hooked, tid));
 
@@ -128,9 +113,9 @@ uint32_t syscall_hook() {
     syscall = NULL;
     if (options.bFastSyscall) {
       // XXX: check me
-      prehook(tid, (SyscallNo) orig_eax, (void *) (orig_esp + 0x4), &syscall);
+      prehook(tid, (SyscallNo) orig_eax, (void *) (orig_esp), &syscall);
     } else {
-      prehook(tid, (SyscallNo) orig_eax, (void *) (orig_esp + 0xc), &syscall);
+      prehook(tid, (SyscallNo) orig_eax, (void *) (orig_esp + 0x8), &syscall);
     }
 
     // Check if this system call could not return
@@ -153,7 +138,7 @@ uint32_t syscall_hook() {
     if (options.bFastSyscall) {
       DO_SYSENTER_SYSCALL(orig_eax, orig_esp, retval);
     } else {
-      DO_INT_SYSCALL(orig_eax, retval);
+      DO_INT_SYSCALL(orig_eax, orig_esp, retval);
     }
 
     ATOMIC(bitset_set_bit(syscall_hooked, tid));
@@ -187,7 +172,7 @@ uint32_t syscall_hook() {
     if (options.bFastSyscall) {
       DO_SYSENTER_SYSCALL(orig_eax, orig_esp, retval);
     } else {
-      DO_INT_SYSCALL(orig_eax, retval);
+      DO_INT_SYSCALL(orig_eax, orig_esp, retval);
     }
   }
 
@@ -246,7 +231,7 @@ uint32_t prehook(uint32_t tid, SyscallNo sysno, void* args, Syscall **syscall) {
   }
 #endif
 
-  return 0;
+  return r;
 }
 
 uint32_t posthook(uint32_t tid, Syscall *syscall, uint32_t retval) {

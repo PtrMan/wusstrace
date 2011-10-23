@@ -1,7 +1,7 @@
 // Copyright notice
 // ================
 //
-// Copyright (C) 2010
+// Copyright (C) 2011
 //     Lorenzo Martignoni <martignlo@gmail.com>
 //     Roberto Paleari <roberto.paleari@gmail.com>
 //
@@ -35,8 +35,6 @@ typedef uint32_t UNKNOWN_TYPE;
 typedef UNKNOWN_TYPE SEMAPHORE_INFORMATION_CLASS;
 typedef UNKNOWN_TYPE EVENT_INFORMATION_CLASS;
 typedef UNKNOWN_TYPE MUTANT_INFORMATION_CLASS;
-typedef UNKNOWN_TYPE TIMER_INFORMATION_CLASS;
-typedef UNKNOWN_TYPE TIMER_INFORMATION_CLASS;
 typedef UNKNOWN_TYPE IO_COMPLETION_INFORMATION_CLASS;
 #else
 #include <winternl.h>
